@@ -1,9 +1,4 @@
-
-
 import 'package:dio/dio.dart';
-
-import '../../services/service_locator.dart';
-import '../cache/cache_helper.dart';
 
 class ApiInterceptors extends Interceptor {
   @override

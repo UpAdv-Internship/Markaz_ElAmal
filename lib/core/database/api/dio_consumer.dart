@@ -3,7 +3,6 @@ import 'package:dio/dio.dart';
 
 import '../../error/error_model.dart';
 import '../../error/exception.dart';
-import '../../services/service_locator.dart';
 import 'api_consumer.dart';
 import 'api_interceptors.dart';
 
