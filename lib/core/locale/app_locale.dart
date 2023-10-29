@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -11,14 +10,14 @@ class AppLocalizations {
   }
 
   static const LocalizationsDelegate<AppLocalizations> delegate =
-  _AppLocalDelegate();
-  static const String _path = 'assets/translations/';
+      _AppLocalDelegate();
+  static const String _path = 'assets/translate/';
 
   late Map<String, String> _localStrings;
 
   Future loadJsonFiles() async {
     String enocedString =
-    await rootBundle.loadString("$_path${locale!.languageCode}.json");
+        await rootBundle.loadString("$_path${locale!.languageCode}.json");
     Map<String, dynamic> jsonMap = jsonDecode(enocedString);
     _localStrings =
         jsonMap.map((key, value) => MapEntry(key, value.toString()));
@@ -50,7 +49,6 @@ class _AppLocalDelegate extends LocalizationsDelegate<AppLocalizations> {
 }
 
 extension TranslateString on String {
-
   String tr(BuildContext context) {
     return AppLocalizations.of(context)!.translate(this);
   }
