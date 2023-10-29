@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:markaz_elamal/features/authentication/sign_in/presentation/screens/sign_in_screen.dart';
-import 'package:markaz_elamal/features/splash/presentation/screens/splash.dart';
+import 'package:markaz_elamal/features/splash/presentation/screens/on_boarding_screen_one.dart';
+// import 'package:markaz_elamal/features/splash/presentation/screens/splash.dart';
 
 class Routes {
   static const String initialRoute = '/';
@@ -11,7 +12,7 @@ class AppRoutes {
   static Route? generateRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
       case Routes.initialRoute:
-        return MaterialPageRoute(builder: (_) => const SplashScreen());
+        return MaterialPageRoute(builder: (_) =>  OnBoardingScreen());
       case Routes.signIn:
         return MaterialPageRoute(builder: (_) => const SignInScreen());
 
