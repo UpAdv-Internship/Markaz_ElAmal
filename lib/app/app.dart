@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:markaz_elamal/core/router/app_router.dart';
 import 'package:markaz_elamal/core/theme/theme.dart';
-import 'package:markaz_elamal/features/splash/presentation/screens/splash.dart';
 
 class MarkazElamal extends StatelessWidget {
   const MarkazElamal({super.key});
@@ -12,9 +12,10 @@ class MarkazElamal extends StatelessWidget {
       designSize: const Size(428, 926),
       builder: (context, child) {
         return  MaterialApp(
-          home: const SplashScreen(),
           debugShowCheckedModeBanner: false,
           theme: getAppTheme(),
+          initialRoute: Routes.initialRoute,
+          onGenerateRoute: AppRoutes.generateRoute,
         );
       },
     );
