@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:markaz_elamal/core/utils/app_assets.dart';
+import 'package:markaz_elamal/core/utils/app_text_styles.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -13,7 +15,8 @@ class SplashScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(AppAssets.appLogo),
-              const Text('Markaz ElAmal')
+              SizedBox(height: 12.h,),
+              const Text('Markaz ElAmal',style: CustomTextStyle.peralta400secondary24,)
             ],
           ),
         ),
