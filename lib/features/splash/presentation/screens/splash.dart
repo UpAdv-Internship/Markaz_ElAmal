@@ -13,12 +13,10 @@ class SplashScreen extends StatelessWidget {
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            
             children: [
               Image.asset(AppAssets.appLogo),
               SizedBox(height: 12.h,),
               const Text('Markaz ElAmal',style: CustomTextStyle.peralta400secondary24,)
-            
             ],
           ),
         ),
