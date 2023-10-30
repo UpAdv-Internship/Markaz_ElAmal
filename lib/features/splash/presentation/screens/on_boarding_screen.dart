@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:markaz_elamal/core/bloc/cubit/global_cubit.dart';
+import 'package:markaz_elamal/core/common/common.dart';
 import 'package:markaz_elamal/core/locale/app_locale.dart';
+import 'package:markaz_elamal/core/router/app_router.dart';
+import 'package:markaz_elamal/core/utils/app_assets.dart';
 import 'package:markaz_elamal/core/utils/app_colors.dart';
 import 'package:markaz_elamal/core/utils/app_strings.dart';
 import 'package:markaz_elamal/core/utils/app_text_styles.dart';
@@ -8,10 +13,27 @@ import 'package:markaz_elamal/features/splash/data/on_boarding_model/on_board_mo
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnBoardingScreen extends StatelessWidget {
-  OnBoardingScreen({super.key});
- final PageController controller = PageController();
+  const OnBoardingScreen({super.key});
   @override
   Widget build(BuildContext context) {
+    final PageController controller = PageController();
+    List<OnBoaringModel> onBoaringScreens = [
+      OnBoaringModel(
+        imagePath: AppAssets.onBoard1,
+        title: AppStrings.onBordingTitle1,
+        subTitle: AppStrings.onBoardingSubTitle1,
+      ),
+      OnBoaringModel(
+        imagePath: AppAssets.onBoard2,
+        title: AppStrings.onBordingTitle2,
+        subTitle: AppStrings.onBoardingSubTitle2,
+      ),
+      OnBoaringModel(
+        imagePath: AppAssets.onBoard3,
+        title: AppStrings.onBordingTitle3,
+        subTitle: AppStrings.onBoardingSubTitle3,
+      ),
+    ];
     return SafeArea(
       child: Scaffold(
         backgroundColor: AppColors.primary,
@@ -21,10 +43,9 @@ class OnBoardingScreen extends StatelessWidget {
               Expanded(
                 child: PageView.builder(
                     controller: controller,
-                    itemCount: OnBoaringModel.onBoaringScreens.length,
+                    itemCount: onBoaringScreens.length,
                     itemBuilder: (context, index) {
                       return Column(
-                        // mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -33,9 +54,12 @@ class OnBoardingScreen extends StatelessWidget {
                               children: [
                                 //!ar button
                                 TextButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    BlocProvider.of<GlobalCubit>(context)
+                                        .switchLang();
+                                  },
                                   child: Text(
-                                    'AR',
+                                    AppStrings.langCode.tr(context),
                                     style: CustomTextStyle.poppins700White24,
                                   ),
                                 ),
@@ -43,10 +67,12 @@ class OnBoardingScreen extends StatelessWidget {
                                 index != 2
                                     ? TextButton(
                                         onPressed: () {
-                                          controller.jumpToPage(2);
+                                          navigateReplacment(
+                                              context: context,
+                                              route: Routes.signIn);
                                         },
                                         child: Text(
-                                          'skip',
+                                          AppStrings.skip.tr(context),
                                           style:
                                               CustomTextStyle.poppins700White24,
                                         ),
@@ -60,7 +86,7 @@ class OnBoardingScreen extends StatelessWidget {
                           Image.asset(
                               width: 290.w,
                               height: 290.h,
-                              OnBoaringModel.onBoaringScreens[index].imagePath),
+                              onBoaringScreens[index].imagePath),
                           const Spacer(),
                           //!container
                           Container(
@@ -80,20 +106,18 @@ class OnBoardingScreen extends StatelessWidget {
                                   height: 19.h,
                                 ),
                                 Text(
-                                  OnBoaringModel.onBoaringScreens[index].title
-                                      .tr(context),
+                                  onBoaringScreens[index].title.tr(context),
                                   style: CustomTextStyle.poppins600secondary24,
                                 ),
                                 SizedBox(
                                   height: 29.h,
                                 ),
                                 Text(
-                                    OnBoaringModel
-                                        .onBoaringScreens[index].subTitle
+                                    onBoaringScreens[index]
+                                        .subTitle
                                         .tr(context),
                                     style:
                                         CustomTextStyle.poppins500secondary20),
-                                // SizedBox(height: 40.h),
                                 const Spacer(),
                                 Row(
                                   mainAxisAlignment:
@@ -102,8 +126,8 @@ class OnBoardingScreen extends StatelessWidget {
                                     SmoothPageIndicator(
                                       controller: controller,
                                       count: 3,
-                                      effect:  ExpandingDotsEffect(
-                                        dotColor: AppColors.lightGrey,
+                                      effect: ExpandingDotsEffect(
+                                          dotColor: AppColors.lightGrey,
                                           activeDotColor: AppColors.primary,
                                           dotHeight: 10.h,
                                           dotWidth: 15.w,
@@ -112,33 +136,43 @@ class OnBoardingScreen extends StatelessWidget {
                                     index != 2
                                         ? TextButton(
                                             onPressed: () {
-                                              controller.nextPage(duration: const Duration(milliseconds: 500), curve: Curves.bounceIn);
+                                              controller.nextPage(
+                                                  duration: const Duration(
+                                                      milliseconds: 500),
+                                                  curve: Curves.bounceIn);
                                             },
                                             child: Row(
                                               children: [
-                                                
                                                 Text(
                                                   AppStrings.next.tr(context),
                                                   style: CustomTextStyle
                                                       .poppins500secondary24,
                                                 ),
                                                 const Icon(
-                                                    Icons.arrow_forward_rounded,size: 33,),
+                                                  Icons.arrow_forward_rounded,
+                                                  size: 33,
+                                                ),
                                               ],
                                             ),
                                           )
+                                        //!Start
                                         : TextButton(
-                                            onPressed: () {},
+                                            onPressed: () {
+                                              navigateReplacment(
+                                                  context: context,
+                                                  route: Routes.signIn);
+                                            },
                                             child: Row(
                                               children: [
-                                                
                                                 Text(
                                                   AppStrings.start.tr(context),
                                                   style: CustomTextStyle
                                                       .poppins500secondary24,
                                                 ),
                                                 const Icon(
-                                                    Icons.arrow_forward_rounded,size: 33,),
+                                                  Icons.arrow_forward_rounded,
+                                                  size: 33,
+                                                ),
                                               ],
                                             ),
                                           )
