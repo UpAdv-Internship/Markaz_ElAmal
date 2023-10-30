@@ -6,23 +6,28 @@ class HaveAnAccountTextWidget extends StatelessWidget {
     super.key,
     required this.textOne,
     required this.textTwo,
+    this.onTap,
   });
   final String textOne;
   final String textTwo;
+  final VoidCallback? onTap;
   @override
   Widget build(BuildContext context) {
-    return Text.rich(
-      TextSpan(
-        children: [
-          TextSpan(
-            text: textOne,
-            style: CustomTextStyle.poppins600primary16,
-          ),
-          TextSpan(
-            text: textTwo,
-            style: CustomTextStyle.poppins600secondary16,
-          ),
-        ],
+    return GestureDetector(
+      onTap: onTap,
+      child: Text.rich(
+        TextSpan(
+          children: [
+            TextSpan(
+              text: textOne,
+              style: CustomTextStyle.poppins600primary16,
+            ),
+            TextSpan(
+              text: textTwo,
+              style: CustomTextStyle.poppins600secondary16,
+            ),
+          ],
+        ),
       ),
     );
   }

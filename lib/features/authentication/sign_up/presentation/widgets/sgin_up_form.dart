@@ -8,8 +8,8 @@ import 'package:markaz_elamal/core/utils/app_strings.dart';
 import 'package:markaz_elamal/core/widgets/logo_with_text_widget.dart';
 import 'package:markaz_elamal/features/authentication/sign_in/presentation/widgets/have_an_account_widget.dart';
 
-class SignInForm extends StatelessWidget {
-  const SignInForm({super.key});
+class SignUpForm extends StatelessWidget {
+  const SignUpForm({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class SignInForm extends StatelessWidget {
       children: [
         Container(
           width: 341.w,
-          height: 400.h,
+          height: 630.h,
           decoration: BoxDecoration(
               color: AppColors.primary,
               border: const Border(
@@ -36,12 +36,12 @@ class SignInForm extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(height: 260.h),
+        SizedBox(height: 25.h),
         HaveAnAccountTextWidget(
-          textOne: AppStrings.dontHaveAnAccount.tr(context),
-          textTwo: AppStrings.signup.tr(context),
+          textOne: AppStrings.haveAlreadyanAccount.tr(context),
+          textTwo: AppStrings.signin.tr(context),
           onTap: () {
-            navigateReplacment(context: context, route: Routes.signUp);
+            navigateReplacment(context: context, route: Routes.signIn);
           },
         ),
       ],
