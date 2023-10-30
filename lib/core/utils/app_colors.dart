@@ -15,4 +15,5 @@ class AppColors {
   static const Color rateApp = Color(0xffF6BB86);
   static const Color feedback = Color(0xffFFDF92);
   static const Color lightGrey = Color(0xffBDCAD6);
+  static const Color transparent = Colors.transparent;
 }

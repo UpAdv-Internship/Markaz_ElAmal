@@ -53,11 +53,23 @@ abstract class CustomTextStyle {
     fontWeight: FontWeight.w600,
     fontSize: 24.sp,
   );
+  static final poppins600White20 = TextStyle(
+    fontFamily: "Poppins",
+    color: AppColors.white,
+    fontWeight: FontWeight.w600,
+    fontSize: 20.sp,
+  );
   static final poppins400White16 = TextStyle(
     fontFamily: "Poppins",
     color: AppColors.white,
     fontWeight: FontWeight.w400,
     fontSize: 16.sp,
+  );
+  static final poppins400White13 = TextStyle(
+    fontFamily: "Poppins",
+    color: AppColors.white,
+    fontWeight: FontWeight.w400,
+    fontSize: 13.sp,
   );
 
   static final poppins600primary24 = TextStyle(
@@ -91,6 +103,12 @@ abstract class CustomTextStyle {
     fontWeight: FontWeight.w400,
     fontSize: 16.sp,
   );
+  static final poppins400secondary13 = TextStyle(
+    fontFamily: "Poppins",
+    color: AppColors.secondary,
+    fontWeight: FontWeight.w400,
+    fontSize: 13.sp,
+  );
   static final poppins400secondary20 = TextStyle(
     fontFamily: "Poppins",
     color: AppColors.secondary,
@@ -102,6 +120,12 @@ abstract class CustomTextStyle {
     color: AppColors.primary,
     fontWeight: FontWeight.w500,
     fontSize: 16.sp,
+  );
+  static final poppins500primary20 = TextStyle(
+    fontFamily: "Poppins",
+    color: AppColors.primary,
+    fontWeight: FontWeight.w500,
+    fontSize: 20.sp,
   );
   static final poppins800secondary40 = TextStyle(
     fontFamily: "Poppins",

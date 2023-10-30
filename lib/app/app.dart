@@ -21,6 +21,9 @@ class MarkazElamal extends StatelessWidget {
         return BlocBuilder<GlobalCubit, GlobalState>(
           builder: (context, state) {
             return MaterialApp(
+              scrollBehavior: ScrollConfiguration.of(context).copyWith(
+                  physics: const BouncingScrollPhysics(
+                      parent: AlwaysScrollableScrollPhysics())),
               localizationsDelegates: const [
                 GlobalMaterialLocalizations.delegate,
                 GlobalCupertinoLocalizations.delegate,

@@ -29,7 +29,9 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   cupertino_icons: ^1.0.2
+  date_time_picker_widget: ^2.0.0
   dio: ^5.3.3
+  easy_date_timeline: ^1.0.1
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.3
