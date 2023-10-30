@@ -76,8 +76,9 @@ class DoctorProfile extends StatelessWidget {
                           SizedBox(height: 6.h),
                           //* Rate
                           Container(
-                            width: 70.w,
+                            width: 80.w,
                             height: 30.h,
+                            padding: EdgeInsets.symmetric(horizontal: 12.w),
                             decoration: BoxDecoration(
                               color: AppColors.primary,
                               borderRadius: BorderRadius.circular(16.r),
@@ -89,6 +90,9 @@ class DoctorProfile extends StatelessWidget {
                                 Text(
                                   '4.9',
                                   style: CustomTextStyle.poppins600White16,
+                                ),
+                                SizedBox(
+                                  width: 8.h,
                                 ),
                                 const Icon(
                                   Icons.star,
@@ -115,6 +119,7 @@ class DoctorProfile extends StatelessWidget {
                             builder: (context, state) {
                               return EasyInfiniteDateTimeLine(
                                 // controller: _controller,
+
                                 locale: "en",
                                 onDateChange: (selectedDate) {
                                   BlocProvider.of<BookingCubit>(context)
@@ -124,6 +129,11 @@ class DoctorProfile extends StatelessWidget {
                                 focusDate:
                                     BlocProvider.of<BookingCubit>(context)
                                         .focusDate,
+                                timeLineProps: const EasyTimeLineProps(
+                                  vPadding: 0,
+                                  hPadding: 0,
+                                  separatorPadding: 10,
+                                ),
                                 showTimelineHeader: false,
                                 lastDate: DateTime(
                                     DateTime.now().year,
@@ -194,7 +204,10 @@ class DoctorProfile extends StatelessWidget {
                               return SizedBox(
                                 width: double.maxFinite,
                                 height: 40.h,
-                                child: ListView.builder(
+                                child: ListView.separated(
+                                  separatorBuilder: (context, index) {
+                                    return SizedBox(width: 12.w);
+                                  },
                                   itemCount: bookingCubit.dateList.length,
                                   scrollDirection: Axis.horizontal,
                                   itemBuilder: (context, index) {
@@ -205,8 +218,8 @@ class DoctorProfile extends StatelessWidget {
                                       child: Container(
                                         width: 82.h,
                                         height: 40.h,
-                                        margin: EdgeInsets.symmetric(
-                                            horizontal: 5.w),
+                                        // margin: EdgeInsets.symmetric(
+                                        //     horizontal: 6.w),
                                         decoration: BoxDecoration(
                                           color:
                                               bookingCubit.activeTime == index

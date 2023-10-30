@@ -10,8 +10,9 @@ class CustomElevatedButton extends StatelessWidget {
     this.height = 43,
     this.backgroundColor = AppColors.primary,
     this.textColor = AppColors.white,
-    this.borderColor = AppColors.transparent,    
-    required this.onPressed, required this.text,
+    this.borderColor = AppColors.transparent,
+    required this.onPressed,
+    required this.text,
   });
   final String text;
   final VoidCallback onPressed;
@@ -23,23 +24,24 @@ class CustomElevatedButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-        onPressed: onPressed,
-        style: ElevatedButton.styleFrom(
-          fixedSize: Size(width.w, height.h),
-          backgroundColor: backgroundColor,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8),
-            side: BorderSide(
-              color: borderColor,
-            ),
+      onPressed: onPressed,
+      style: ElevatedButton.styleFrom(
+        fixedSize: Size(width.w, height.h),
+        backgroundColor: backgroundColor,
+        elevation: 5,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8),
+          side: BorderSide(
+            color: borderColor,
           ),
         ),
-        child: Text(
-          text,
-          style: CustomTextStyle.poppins400White16.copyWith(
-            color: textColor,
-          ),
+      ),
+      child: Text(
+        text,
+        style: CustomTextStyle.poppins400White16.copyWith(
+          color: textColor,
         ),
-        );
+      ),
+    );
   }
 }
