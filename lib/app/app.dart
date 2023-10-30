@@ -34,7 +34,7 @@ class MarkazElamal extends StatelessWidget {
               locale: Locale(sl<CacheHelper>().getCachedLanguage()),
               debugShowCheckedModeBanner: false,
               theme: getAppTheme(),
-              initialRoute: Routes.initialRoute,
+              initialRoute: Routes.doctorProfile,
               onGenerateRoute: AppRoutes.generateRoute,
             );
           },
