@@ -12,6 +12,7 @@ import 'package:markaz_elamal/features/booking/presentation/booking_cubit/bookin
 
 class DoctorProfile extends StatelessWidget {
   const DoctorProfile({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -116,12 +117,8 @@ class DoctorProfile extends StatelessWidget {
                                 // controller: _controller,
                                 locale: "en",
                                 onDateChange: (selectedDate) {
-                                  // setState(() {
                                   BlocProvider.of<BookingCubit>(context)
-                                      .focusDate = selectedDate;
-                                  print(BlocProvider.of<BookingCubit>(context)
-                                      .focusDate);
-                                  // });
+                                      .changeDate(selectedDate);
                                 },
                                 firstDate: DateTime.now(),
                                 focusDate:
@@ -136,16 +133,28 @@ class DoctorProfile extends StatelessWidget {
                                   width: 82.w,
                                   height: 60.h,
                                   dayStructure: DayStructure.dayStrDayNumMonth,
+                                  todayStyle: DayStyle(
+                                    borderRadius: 8,
+                                    dayNumStyle:
+                                        CustomTextStyle.poppins400secondary13,
+                                    dayStrStyle:
+                                        CustomTextStyle.poppins400secondary13,
+                                    monthStrStyle:
+                                        CustomTextStyle.poppins400secondary13,
+                                    decoration: BoxDecoration(
+                                      color: AppColors.lightGrey,
+                                      borderRadius: BorderRadius.circular(8),
+                                      border:
+                                          Border.all(color: AppColors.primary),
+                                    ),
+                                  ),
                                   activeDayStyle: DayStyle(
-                                    dayNumStyle: CustomTextStyle
-                                        .poppins400White16
-                                        .copyWith(fontSize: 13),
-                                    dayStrStyle: CustomTextStyle
-                                        .poppins400White16
-                                        .copyWith(fontSize: 13),
-                                    monthStrStyle: CustomTextStyle
-                                        .poppins400White16
-                                        .copyWith(fontSize: 13),
+                                    dayNumStyle:
+                                        CustomTextStyle.poppins400White13,
+                                    dayStrStyle:
+                                        CustomTextStyle.poppins400White13,
+                                    monthStrStyle:
+                                        CustomTextStyle.poppins400White13,
                                     decoration: BoxDecoration(
                                       color: AppColors.primary,
                                       borderRadius: BorderRadius.circular(8),
@@ -156,15 +165,12 @@ class DoctorProfile extends StatelessWidget {
                                   ),
                                   inactiveDayStyle: DayStyle(
                                     borderRadius: 8,
-                                    dayNumStyle: CustomTextStyle
-                                        .poppins400secondary16
-                                        .copyWith(fontSize: 13),
-                                    dayStrStyle: CustomTextStyle
-                                        .poppins400secondary16
-                                        .copyWith(fontSize: 13),
-                                    monthStrStyle: CustomTextStyle
-                                        .poppins400secondary16
-                                        .copyWith(fontSize: 13),
+                                    dayNumStyle:
+                                        CustomTextStyle.poppins400secondary13,
+                                    dayStrStyle:
+                                        CustomTextStyle.poppins400secondary13,
+                                    monthStrStyle:
+                                        CustomTextStyle.poppins400secondary13,
                                     decoration: BoxDecoration(
                                       color: AppColors.lightGrey,
                                       borderRadius: BorderRadius.circular(8),
@@ -181,35 +187,57 @@ class DoctorProfile extends StatelessWidget {
                             style: CustomTextStyle.poppins600secondary16,
                           ),
                           SizedBox(height: 5.h),
-                          SizedBox(
-                            width: double.maxFinite,
-                            height: 40.h,
-                            child: ListView.builder(
-                              itemCount: 10,
-                              scrollDirection: Axis.horizontal,
-                              itemBuilder: (context, index) {
-                                return InkWell(
-                                  onTap: () {},
-                                  child: Container(
-                                    width: 82.h,
-                                    height: 40.h,
-                                    margin:
-                                        EdgeInsets.symmetric(horizontal: 5.w),
-                                    decoration: BoxDecoration(
-                                      color: AppColors.lightGrey,
-                                      borderRadius: BorderRadius.circular(8),
-                                    ),
-                                    child: Center(
-                                      child: Text(
-                                        '12:00',
-                                        style: CustomTextStyle
-                                            .poppins400secondary16,
+                          BlocBuilder<BookingCubit, BookingState>(
+                            builder: (context, state) {
+                              final bookingCubit =
+                                  BlocProvider.of<BookingCubit>(context);
+                              return SizedBox(
+                                width: double.maxFinite,
+                                height: 40.h,
+                                child: ListView.builder(
+                                  itemCount: bookingCubit.dateList.length,
+                                  scrollDirection: Axis.horizontal,
+                                  itemBuilder: (context, index) {
+                                    return InkWell(
+                                      onTap: () {
+                                        bookingCubit.changeTime(index);
+                                      },
+                                      child: Container(
+                                        width: 82.h,
+                                        height: 40.h,
+                                        margin: EdgeInsets.symmetric(
+                                            horizontal: 5.w),
+                                        decoration: BoxDecoration(
+                                          color:
+                                              bookingCubit.activeTime == index
+                                                  ? AppColors.primary
+                                                  : AppColors.lightGrey,
+                                          borderRadius:
+                                              BorderRadius.circular(8),
+                                          border: Border.all(
+                                            color:
+                                                bookingCubit.activeTime == index
+                                                    ? AppColors.secondary
+                                                    : AppColors.transparent,
+                                          ),
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            bookingCubit.dateList[index],
+                                            style:
+                                                bookingCubit.activeTime == index
+                                                    ? CustomTextStyle
+                                                        .poppins400White16
+                                                    : CustomTextStyle
+                                                        .poppins400secondary16,
+                                          ),
+                                        ),
                                       ),
-                                    ),
-                                  ),
-                                );
-                              },
-                            ),
+                                    );
+                                  },
+                                ),
+                              );
+                            },
                           ),
                           SizedBox(height: 42.h),
                           //* Buttons
