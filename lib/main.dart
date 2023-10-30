@@ -4,6 +4,7 @@ import 'package:markaz_elamal/app/app.dart';
 import 'package:markaz_elamal/core/bloc/cubit/global_cubit.dart';
 import 'package:markaz_elamal/core/database/cache/cache_helper.dart';
 import 'package:markaz_elamal/core/services/service_locator.dart';
+import 'package:markaz_elamal/features/booking/presentation/booking_cubit/booking_cubit.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,9 +14,8 @@ void main() async {
   runApp(
     MultiBlocProvider(
       providers: [
-        BlocProvider(
-          create: (context) => sl<GlobalCubit>(),
-        ),
+        BlocProvider(create: (context) => sl<GlobalCubit>()),
+        BlocProvider(create: (context) => sl<BookingCubit>()),
       ],
       child: const MarkazElamal(),
     ),

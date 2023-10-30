@@ -1,17 +1,17 @@
-import 'package:date_time_picker_widget/date_time_picker_widget.dart';
 import 'package:easy_date_timeline/easy_date_timeline.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:markaz_elamal/core/locale/app_locale.dart';
 import 'package:markaz_elamal/core/utils/app_colors.dart';
 import 'package:markaz_elamal/core/utils/app_strings.dart';
 import 'package:markaz_elamal/core/utils/app_text_styles.dart';
 import 'package:markaz_elamal/core/widgets/custom_elevated_button.dart';
-import 'package:time_range/time_range.dart';
+import 'package:markaz_elamal/features/booking/presentation/booking_cubit/booking_cubit.dart';
+import 'package:markaz_elamal/features/booking/presentation/booking_cubit/booking_state.dart';
 
 class DoctorProfile extends StatelessWidget {
   const DoctorProfile({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -110,36 +110,68 @@ class DoctorProfile extends StatelessWidget {
                             style: CustomTextStyle.poppins600secondary16,
                           ),
                           SizedBox(height: 16.h),
-                          EasyInfiniteDateTimeLine(
-                            // controller: _controller,
-                            locale: "en",
-                            firstDate: DateTime.now(),
-                            focusDate: DateTime.now(),
-                            showTimelineHeader: false,
-                            lastDate: DateTime(DateTime.now().year,
-                                DateTime.now().month, DateTime.now().day + 30),
-                            dayProps: EasyDayProps(
-                              width: 82.w,
-                              height: 40.h,
-                              dayStructure: DayStructure.dayNameOnly,
-                              activeDayStyle: DayStyle(
-                                decoration: BoxDecoration(
-                                  color: AppColors.primary,
-                                  borderRadius: BorderRadius.circular(8),
-                                  border: Border.all(
-                                    color: AppColors.secondary,
+                          BlocBuilder<BookingCubit, BookingState>(
+                            builder: (context, state) {
+                              return EasyInfiniteDateTimeLine(
+                                // controller: _controller,
+                                locale: "en",
+                                onDateChange: (selectedDate) {
+                                  // setState(() {
+                                  BlocProvider.of<BookingCubit>(context)
+                                      .focusDate = selectedDate;
+                                  print(BlocProvider.of<BookingCubit>(context)
+                                      .focusDate);
+                                  // });
+                                },
+                                firstDate: DateTime.now(),
+                                focusDate:
+                                    BlocProvider.of<BookingCubit>(context)
+                                        .focusDate,
+                                showTimelineHeader: false,
+                                lastDate: DateTime(
+                                    DateTime.now().year,
+                                    DateTime.now().month,
+                                    DateTime.now().day + 30),
+                                dayProps: EasyDayProps(
+                                  width: 82.w,
+                                  height: 60.h,
+                                  dayStructure: DayStructure.dayStrDayNumMonth,
+                                  activeDayStyle: DayStyle(
+                                    dayNumStyle: CustomTextStyle
+                                        .poppins400White16
+                                        .copyWith(fontSize: 13),
+                                    dayStrStyle: CustomTextStyle
+                                        .poppins400White16
+                                        .copyWith(fontSize: 13),
+                                    monthStrStyle: CustomTextStyle
+                                        .poppins400White16
+                                        .copyWith(fontSize: 13),
+                                    decoration: BoxDecoration(
+                                      color: AppColors.primary,
+                                      borderRadius: BorderRadius.circular(8),
+                                      border: Border.all(
+                                        color: AppColors.secondary,
+                                      ),
+                                    ),
+                                  ),
+                                  inactiveDayStyle: DayStyle(
+                                    borderRadius: 8,
+                                    dayNumStyle: CustomTextStyle
+                                        .poppins400secondary16
+                                        .copyWith(fontSize: 13),
+                                    dayStrStyle: CustomTextStyle
+                                        .poppins400secondary16
+                                        .copyWith(fontSize: 13),
+                                    monthStrStyle: CustomTextStyle
+                                        .poppins400secondary16
+                                        .copyWith(fontSize: 13),
+                                    decoration: BoxDecoration(
+                                      color: AppColors.lightGrey,
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
                                   ),
                                 ),
-                              ),
-                              inactiveDayStyle: const DayStyle(
-                                borderRadius: 8,
-                              ),
-                            ),
-
-                            onDateChange: (selectedDate) {
-                              // setState(() {
-                              // _focusDate = selectedDate;
-                              // });
+                              );
                             },
                           ),
                           SizedBox(height: 14.h),
@@ -149,15 +181,36 @@ class DoctorProfile extends StatelessWidget {
                             style: CustomTextStyle.poppins600secondary16,
                           ),
                           SizedBox(height: 5.h),
-                          // ListView.builder(
-                          //   itemCount: 3,
-                          //   scrollDirection: Axis.horizontal,
-                          //   itemBuilder: (context, index) {
-                          //     return Container(
-
-                          //     );
-                          //   },
-                          // ),
+                          SizedBox(
+                            width: double.maxFinite,
+                            height: 40.h,
+                            child: ListView.builder(
+                              itemCount: 10,
+                              scrollDirection: Axis.horizontal,
+                              itemBuilder: (context, index) {
+                                return InkWell(
+                                  onTap: () {},
+                                  child: Container(
+                                    width: 82.h,
+                                    height: 40.h,
+                                    margin:
+                                        EdgeInsets.symmetric(horizontal: 5.w),
+                                    decoration: BoxDecoration(
+                                      color: AppColors.lightGrey,
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                    child: Center(
+                                      child: Text(
+                                        '12:00',
+                                        style: CustomTextStyle
+                                            .poppins400secondary16,
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              },
+                            ),
+                          ),
                           SizedBox(height: 42.h),
                           //* Buttons
                           Row(
