@@ -1,16 +1,18 @@
 
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:markaz_elamal/core/utils/app_colors.dart';
 
 class InkWellIconButton extends StatelessWidget {
   const InkWellIconButton({
-    super.key, required this.onTap, this.background, required this.icon, this.height, this.width, 
+    super.key, required this.onTap, this.background,  this.icon, this.height, this.width, this.iconAwesome, 
   });
    final double? height;
   final  double? width;
   final VoidCallback onTap;
   final Color? background;
-  final Icon  icon;
+  final Icon?  icon;
+  final IconData?   iconAwesome;
 
   @override
   Widget build(BuildContext context) {

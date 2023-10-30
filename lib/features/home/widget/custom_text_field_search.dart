@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:markaz_elamal/core/utils/app_colors.dart';
 import 'package:markaz_elamal/core/utils/app_text_styles.dart';
 
@@ -12,6 +13,7 @@ class CustomTextFormFieldSearch extends StatelessWidget {
   final TextEditingController controller;
   final String? hint;
   final String? label;
+  
 
   @override
   Widget build(BuildContext context) {
@@ -19,13 +21,13 @@ class CustomTextFormFieldSearch extends StatelessWidget {
       decoration: InputDecoration(
           contentPadding: const EdgeInsets.all(0),
           prefixIcon: const Icon(
-            Icons.search,
+            FontAwesomeIcons.magnifyingGlass,
             color: AppColors.secondary,
             size: 24,
           ),
           hintText: hint,
           labelText: label,
-          hintStyle: CustomTextStyle.poppins400secondary20),
+          hintStyle: CustomTextStyle.poppins500secondary24),
     );
   }
 }
