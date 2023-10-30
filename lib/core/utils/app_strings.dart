@@ -2,6 +2,8 @@ class AppStrings {
   //! App Name
   static const String markazElAmal = "markazElAmal";
   //! Language
+
+  static const String langCode = "langCode";
   static const String ar = "ar";
   static const String en = "en";  
   //! On Boarding
