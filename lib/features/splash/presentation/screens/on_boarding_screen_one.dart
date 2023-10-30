@@ -95,6 +95,7 @@ class OnBoardingScreen extends StatelessWidget {
                                         CustomTextStyle.poppins500secondary20),
                                 // SizedBox(height: 40.h),
                                 const Spacer(),
+                                //!row button and smooth
                                 Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
@@ -112,7 +113,7 @@ class OnBoardingScreen extends StatelessWidget {
                                     index != 2
                                         ? TextButton(
                                             onPressed: () {
-                                              controller.nextPage(duration: const Duration(milliseconds: 500), curve: Curves.bounceIn);
+                                              controller.nextPage(duration: const Duration(milliseconds: 500), curve: Curves.linear);
                                             },
                                             child: Row(
                                               children: [
