@@ -6,8 +6,8 @@ import 'package:markaz_elamal/core/utils/app_text_styles.dart';
 class CustomElevatedButton extends StatelessWidget {
   const CustomElevatedButton({
     super.key,
-    this.width = 156,
-    this.height = 43,
+    this.width,
+    this.height,
     this.backgroundColor = AppColors.primary,
     this.textColor = AppColors.white,
     this.borderColor = AppColors.transparent,
@@ -16,8 +16,8 @@ class CustomElevatedButton extends StatelessWidget {
   });
   final String text;
   final VoidCallback onPressed;
-  final double width;
-  final double height;
+  final double? width;
+  final double? height;
   final Color backgroundColor;
   final Color textColor;
   final Color borderColor;
@@ -26,7 +26,7 @@ class CustomElevatedButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        fixedSize: Size(width.w, height.h),
+        fixedSize: Size(width ?? 165.w, height ?? 43.h),
         backgroundColor: backgroundColor,
         elevation: 5,
         shape: RoundedRectangleBorder(
