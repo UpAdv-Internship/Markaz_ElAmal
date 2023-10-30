@@ -20,18 +20,18 @@ class OnBoardingScreen extends StatelessWidget {
     List<OnBoaringModel> onBoaringScreens = [
       OnBoaringModel(
         imagePath: AppAssets.onBoard1,
-        title: AppStrings.onBordingTitle1,
-        subTitle: AppStrings.onBoardingSubTitle1,
+        title: AppStrings.onBordingTitle1.tr(context),
+        subTitle: AppStrings.onBoardingSubTitle1.tr(context),
       ),
       OnBoaringModel(
         imagePath: AppAssets.onBoard2,
-        title: AppStrings.onBordingTitle2,
-        subTitle: AppStrings.onBoardingSubTitle2,
+        title: AppStrings.onBordingTitle2.tr(context),
+        subTitle: AppStrings.onBoardingSubTitle2.tr(context),
       ),
       OnBoaringModel(
         imagePath: AppAssets.onBoard3,
-        title: AppStrings.onBordingTitle3,
-        subTitle: AppStrings.onBoardingSubTitle3,
+        title: AppStrings.onBordingTitle3.tr(context),
+        subTitle: AppStrings.onBoardingSubTitle3.tr(context),
       ),
     ];
     return SafeArea(
@@ -106,16 +106,13 @@ class OnBoardingScreen extends StatelessWidget {
                                   height: 19.h,
                                 ),
                                 Text(
-                                  onBoaringScreens[index].title.tr(context),
+                                  onBoaringScreens[index].title,
                                   style: CustomTextStyle.poppins600secondary24,
                                 ),
                                 SizedBox(
                                   height: 29.h,
                                 ),
-                                Text(
-                                    onBoaringScreens[index]
-                                        .subTitle
-                                        .tr(context),
+                                Text(onBoaringScreens[index].subTitle,
                                     style:
                                         CustomTextStyle.poppins500secondary20),
                                 const Spacer(),
