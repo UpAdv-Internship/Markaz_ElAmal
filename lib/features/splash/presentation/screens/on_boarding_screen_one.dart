@@ -101,6 +101,7 @@ class OnBoardingScreen extends StatelessWidget {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     SmoothPageIndicator(
+                                      
                                       controller: controller,
                                       count: 3,
                                       effect:  ExpandingDotsEffect(
@@ -114,6 +115,7 @@ class OnBoardingScreen extends StatelessWidget {
                                         ? TextButton(
                                             onPressed: () {
                                               controller.nextPage(duration: const Duration(milliseconds: 500), curve: Curves.linear);
+                                              
                                             },
                                             child: Row(
                                               children: [
