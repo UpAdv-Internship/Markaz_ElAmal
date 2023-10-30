@@ -2,7 +2,9 @@ import 'package:easy_date_timeline/easy_date_timeline.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:markaz_elamal/core/database/cache/cache_helper.dart';
 import 'package:markaz_elamal/core/locale/app_locale.dart';
+import 'package:markaz_elamal/core/services/service_locator.dart';
 import 'package:markaz_elamal/core/utils/app_colors.dart';
 import 'package:markaz_elamal/core/utils/app_strings.dart';
 import 'package:markaz_elamal/core/utils/app_text_styles.dart';
@@ -120,7 +122,7 @@ class DoctorProfile extends StatelessWidget {
                               return EasyInfiniteDateTimeLine(
                                 // controller: _controller,
 
-                                locale: "en",
+                                locale: sl<CacheHelper>().getCachedLanguage(),
                                 onDateChange: (selectedDate) {
                                   BlocProvider.of<BookingCubit>(context)
                                       .changeDate(selectedDate);
