@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:markaz_elamal/features/authentication/sign_in/presentation/widgets/custom_banner.dart';
-import 'package:markaz_elamal/features/authentication/sign_in/presentation/widgets/sign_in_form.dart';
+import 'package:markaz_elamal/features/authentication/sign_up/presentation/widgets/sgin_up_form.dart';
 
-class CustomFormBanner extends StatelessWidget {
-  const CustomFormBanner({super.key});
+class CustomSignUpFormBanner extends StatelessWidget {
+  const CustomSignUpFormBanner({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class CustomFormBanner extends StatelessWidget {
         Positioned(
           top: -134.h,
           right: 44.w,
-          child: const SignInForm(),
+          child: const SignUpForm(),
         ),
       ],
     );
