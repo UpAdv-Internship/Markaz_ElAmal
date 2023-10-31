@@ -118,5 +118,11 @@
     "savePreferences" : "Save Preferences",
     "submit" : "Submit",
     "confirmLogout" : "Confirm Logout",
-    "logoutFromAllDevices" : "Logout from all devices"
+    "logoutFromAllDevices" : "Logout from all devices",
+    "speech" : "Speech",
+    "autism" : "Autism",
+    "learningDifficulties" : "Learning Difficulties",
+    "intelligenceTest" : "Intelligence Test",
+    "behaviorModification" : "Behavior Modification",
+    "skillsDevelopment" : "Skills Development"
 }

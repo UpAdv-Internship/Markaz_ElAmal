@@ -118,5 +118,11 @@
     "savePreferences" : "حفظ التفضيلات",
     "submit" : "إرسال",
     "confirmLogout" : "تأكيد الخروج",
-    "logoutFromAllDevices" : "تسجيل الخروج من كل الأجهزة"
+    "logoutFromAllDevices" : "تسجيل الخروج من كل الأجهزة",
+    "speech" : "تخاطب",
+    "autism" : "توحد",
+    "learningDifficulties" : "صعوبة التعلم",
+    "intelligenceTest" : "اختبار ذكاء",
+    "behaviorModification" : "تعديل سلوك",
+    "skillsDevelopment" : "تنميه مهارات"
 }
