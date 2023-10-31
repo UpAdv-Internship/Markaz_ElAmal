@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:markaz_elamal/core/locale/app_locale.dart';
 import 'package:markaz_elamal/core/utils/app_strings.dart';
 
@@ -21,8 +22,7 @@ class CategoryScreen extends StatelessWidget{
         title: const Text(AppStrings.category,style: TextStyle(fontWeight: FontWeight.w600,fontSize: 24),),
         backgroundColor: const Color(0xff336EA6),
       ),
-      body:  SingleChildScrollView(
-        child: Center(
+      body: Center(
           child: Padding(
             padding: const EdgeInsets.all(15.0),
             child: Column(
@@ -38,12 +38,12 @@ class CategoryScreen extends StatelessWidget{
                       },
                       child: ContainerReuse(
                         imageOfDis: Image.asset(AppAssets.speech),
-                        desc: AppStrings.speech.tr(context),
-                        distanceBetweenImageAndText: 15,
+                        desc: 'Speech',
+                        distanceBetweenImageAndText: 15.h,
                       ),
                     ),
-                    const SizedBox(
-                      width: 20,
+                     SizedBox(
+                      width: 26.w,
                     ),
 
                     // Autism Category
@@ -54,14 +54,14 @@ class CategoryScreen extends StatelessWidget{
                       },
                       child: ContainerReuse(
                         imageOfDis: Image.asset(AppAssets.aut),
-                        desc: AppStrings.autism.tr(context),
-                        distanceBetweenImageAndText: 15,
+                        desc: 'Autism',
+                        distanceBetweenImageAndText: 15.h,
                       ),
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 20,
+                 SizedBox(
+                  height: 20.h,
                 ),
                 Row(
                   children: [
@@ -74,12 +74,12 @@ class CategoryScreen extends StatelessWidget{
                       },
                       child: ContainerReuse(
                         imageOfDis: Image.asset(AppAssets.learnDiff),
-                        desc: AppStrings.learningDifficulties.tr(context),
-                        distanceBetweenImageAndText: 1,
+                        desc: 'learning\nDifficulties',
+                        distanceBetweenImageAndText: 1.h,
                       ),
                     ),
-                    const SizedBox(
-                      width: 20,
+                     SizedBox(
+                      width: 26.w,
                     ),
 
                     // Intelligence Test
@@ -90,14 +90,14 @@ class CategoryScreen extends StatelessWidget{
                       },
                       child: ContainerReuse(
                         imageOfDis: Image.asset(AppAssets.intTest),
-                        desc: AppStrings.intelligenceTest.tr(context),
-                        distanceBetweenImageAndText: 15,
+                        desc: 'intelligence\nTest',
+                        distanceBetweenImageAndText: 1.h,
                       ),
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 20,
+                 SizedBox(
+                  height: 20.h,
                 ),
                 Row(
                   children: [
@@ -110,13 +110,13 @@ class CategoryScreen extends StatelessWidget{
                       },
                       child: ContainerReuse(
                         imageOfDis: Image.asset(AppAssets.behMod),
-                        desc: AppStrings.behaviorModification.tr(context),
-                        distanceBetweenImageAndText: 1,
+                        desc: 'behavior\nModification',
+                        distanceBetweenImageAndText: 1.h,
 
                       ),
                     ),
-                    const SizedBox(
-                      width: 20,
+                     SizedBox(
+                      width: 26.w,
                     ),
 
                     // Skills development
@@ -127,8 +127,8 @@ class CategoryScreen extends StatelessWidget{
                       },
                       child: ContainerReuse(
                         imageOfDis: Image.asset(AppAssets.skillsDevelop),
-                        desc: AppStrings.skillsDevelopment.tr(context),
-                        distanceBetweenImageAndText: 1,
+                        desc: 'skills\nDevelopment',
+                        distanceBetweenImageAndText: 2.h,
 
                       ),
                     ),
@@ -139,7 +139,7 @@ class CategoryScreen extends StatelessWidget{
             ),
           ),
         ),
-      ),
+
     );
   }
 

@@ -46,12 +46,6 @@ class AppStrings {
   static const String bookaDoctor = "bookaDoctor";
   static const String bookaDate = "bookaDate";
   static const String selectaTime = "selectaTime";
-  static const String speech = "speech";
-  static const String autism = "autism";
-  static const String learningDifficulties = "learningDifficulties";
-  static const String intelligenceTest = "intelligenceTest";
-  static const String behaviorModification = "behaviorModification";
-  static const String skillsDevelopment = "skillsDevelopment";
   //! Payment
   static const String paymentMethods = "paymentMethods";
   static const String chooseDesiredVehicleType = "chooseDesiredVehicleType";

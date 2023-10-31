@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:markaz_elamal/core/utils/app_colors.dart';
 
 class ContainerReuse extends StatelessWidget {
@@ -19,19 +20,17 @@ class ContainerReuse extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 216,
-      width: 180,
+      height: 230.h,
+      width: 185.w,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
         color: AppColors.primary,
       ),
 
-      child: Padding(
-        padding: const EdgeInsets.all(7.0),
         child: Column(
           children: [
-            const SizedBox(
-              height: 4,
+             SizedBox(
+              height: 7.h,
             ),
             SizedBox(
               height: 111,
@@ -42,9 +41,9 @@ class ContainerReuse extends StatelessWidget {
               height: distanceBetweenImageAndText,
             ),
 
-                Align(
-                  alignment: Alignment.center,
-                  child: Text(desc,style: const TextStyle(
+                Expanded(
+                  flex: 5,
+                  child: Text(desc,style:  const TextStyle(
                   color: Colors.white,
                   fontSize: 20 ,
                   fontWeight: FontWeight.w600,
@@ -60,12 +59,12 @@ class ContainerReuse extends StatelessWidget {
                 Icon(Icons.arrow_forward_ios_outlined,color: Colors.white,),
               ],
             ),
-            const SizedBox(
-              height: 10,
+             SizedBox(
+              height: 10.h,
             ),
           ],
         ),
-      ),
+
 
     );
   }
