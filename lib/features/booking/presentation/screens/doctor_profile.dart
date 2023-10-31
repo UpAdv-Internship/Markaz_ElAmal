@@ -28,7 +28,7 @@ class DoctorProfile extends StatelessWidget {
       body: SingleChildScrollView(
         child: Center(
           child: Padding(
-            padding: EdgeInsets.symmetric(vertical: 10.h),
+            padding: EdgeInsets.symmetric(vertical: 5.h),
             child: Column(
               children: [
                 //! Doctor Image
@@ -42,7 +42,7 @@ class DoctorProfile extends StatelessWidget {
                       padding: EdgeInsets.all(10.h),
                       decoration: BoxDecoration(
                         color: AppColors.primary,
-                        borderRadius: BorderRadius.circular(30),
+                        borderRadius: BorderRadius.circular(30.r),
                       ),
                       child: Column(
                         children: [
@@ -60,7 +60,7 @@ class DoctorProfile extends StatelessWidget {
                       margin: EdgeInsets.only(top: 56.h),
                       decoration: BoxDecoration(
                         color: AppColors.white,
-                        borderRadius: BorderRadius.circular(30),
+                        borderRadius: BorderRadius.circular(30.r),
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -146,7 +146,7 @@ class DoctorProfile extends StatelessWidget {
                                   height: 60.h,
                                   dayStructure: DayStructure.dayStrDayNumMonth,
                                   todayStyle: DayStyle(
-                                    borderRadius: 8,
+                                    borderRadius: 8.r,
                                     dayNumStyle:
                                         CustomTextStyle.poppins400secondary13,
                                     dayStrStyle:
@@ -155,7 +155,7 @@ class DoctorProfile extends StatelessWidget {
                                         CustomTextStyle.poppins400secondary13,
                                     decoration: BoxDecoration(
                                       color: AppColors.lightGrey,
-                                      borderRadius: BorderRadius.circular(8),
+                                      borderRadius: BorderRadius.circular(8.r),
                                       border:
                                           Border.all(color: AppColors.primary),
                                     ),
@@ -169,14 +169,14 @@ class DoctorProfile extends StatelessWidget {
                                         CustomTextStyle.poppins400White13,
                                     decoration: BoxDecoration(
                                       color: AppColors.primary,
-                                      borderRadius: BorderRadius.circular(8),
+                                      borderRadius: BorderRadius.circular(8.r),
                                       border: Border.all(
                                         color: AppColors.secondary,
                                       ),
                                     ),
                                   ),
                                   inactiveDayStyle: DayStyle(
-                                    borderRadius: 8,
+                                    borderRadius: 8.r,
                                     dayNumStyle:
                                         CustomTextStyle.poppins400secondary13,
                                     dayStrStyle:
@@ -185,7 +185,7 @@ class DoctorProfile extends StatelessWidget {
                                         CustomTextStyle.poppins400secondary13,
                                     decoration: BoxDecoration(
                                       color: AppColors.lightGrey,
-                                      borderRadius: BorderRadius.circular(8),
+                                      borderRadius: BorderRadius.circular(8.r),
                                     ),
                                   ),
                                 ),
@@ -228,7 +228,7 @@ class DoctorProfile extends StatelessWidget {
                                                   ? AppColors.primary
                                                   : AppColors.lightGrey,
                                           borderRadius:
-                                              BorderRadius.circular(8),
+                                              BorderRadius.circular(8.r),
                                           border: Border.all(
                                             color:
                                                 bookingCubit.activeTime == index

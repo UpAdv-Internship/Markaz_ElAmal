@@ -6,6 +6,7 @@ import 'package:markaz_elamal/core/router/app_router.dart';
 import 'package:markaz_elamal/core/utils/app_colors.dart';
 import 'package:markaz_elamal/core/utils/app_strings.dart';
 import 'package:markaz_elamal/core/widgets/logo_with_text_widget.dart';
+import 'package:markaz_elamal/features/authentication/common/custom_authentication_btn.dart';
 import 'package:markaz_elamal/features/authentication/sign_in/presentation/widgets/have_an_account_widget.dart';
 
 class SignInForm extends StatelessWidget {
@@ -33,6 +34,13 @@ class SignInForm extends StatelessWidget {
               //!Logo
               const LogoWithTextWidget(),
               //!Email
+              //!Password
+              //!Sign In Button
+              CustomAuthenticationBtn(
+                  text: AppStrings.signin.tr(context),
+                  onPressed: () {
+                    navigate(context: context, route: Routes.doctorProfile);
+                  }),
             ],
           ),
         ),
