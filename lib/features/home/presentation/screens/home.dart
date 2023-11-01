@@ -7,6 +7,7 @@ import 'package:markaz_elamal/core/utils/app_colors.dart';
 import 'package:markaz_elamal/core/utils/app_strings.dart';
 import 'package:markaz_elamal/core/utils/app_text_styles.dart';
 import 'package:markaz_elamal/core/widgets/inkwell_icon_button.dart';
+import 'package:markaz_elamal/features/home/widget/List_doctor_detils.dart';
 import 'package:markaz_elamal/features/home/widget/custom_images.dart';
 import 'package:markaz_elamal/features/home/widget/custom_text_field_search.dart';
 
@@ -17,14 +18,13 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Padding(
-          padding: const EdgeInsets.all(20),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                //!message and notifications
-                Row(
-                  
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              //!message and notifications
+              Padding(
+                padding: const EdgeInsets.only(left: 20,top: 20,right: 20),
+                child: Row(
                   children: [
                     Image.asset(
                       AppAssets.appLogo,
@@ -59,11 +59,14 @@ class HomeScreen extends StatelessWidget {
                         onTap: () {}),
                   ],
                 ),
-                SizedBox(
-                  height: 37.w,
-                ),
-                //!search
-                Row(
+              ),
+              SizedBox(
+                height: 10.h,
+              ),
+              //!search
+              Padding(
+                padding: const EdgeInsets.only(left: 20,top: 20,right: 20),
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     SizedBox(
@@ -73,29 +76,32 @@ class HomeScreen extends StatelessWidget {
                         hint: AppStrings.search,
                       ),
                     ),
-                    
                     InkWellIconButton(
                       height: 56.h,
                       width: 55.w,
                       onTap: () {},
                       icon: const Icon(
-                        Icons.format_align_left_rounded,
+                        Icons.equalizer_rounded,
                         color: AppColors.white,
                       ),
                     ),
                   ],
                 ),
-                SizedBox(
-                  height: 30.h,
-                ),
-                //!sliderr
-                ImageSlideshow(
+              ),
+              SizedBox(
+                height: 30.h,
+              ),
+              //!sliderr
+              Padding(
+                padding: const EdgeInsets.only(left: 20,right: 20),
+                child: ImageSlideshow(
+                  height: 150.h,
                   indicatorColor: AppColors.primary,
                   onPageChanged: (value) {
                     debugPrint('Page changed: $value');
                   },
                   autoPlayInterval: 3000,
-                  isLoop: true,
+                  isLoop: false,
                   children: const [
                     CustomImages(
                       imgPath: AssetImage(AppAssets.imageSlider),
@@ -108,8 +114,14 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                //!Category
-                Row(
+              ),
+              SizedBox(
+                height: 25.h,
+              ),
+              //!Category
+              Padding(
+               padding: const EdgeInsets.only(left: 20,),
+                child: Row(
                   children: [
                     Text(
                       AppStrings.category.tr(context),
@@ -135,15 +147,19 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 15.h,),
-                //!list view category
-                SizedBox(
+              ),
+              SizedBox(
+                height: 15.h,
+              ),
+              //!list view category
+              Padding(
+               padding: const EdgeInsets.only(left: 20),
+                child: SizedBox(
                   height: 60.h,
                   child: ListView.separated(
                     separatorBuilder: (context, index) {
                       return SizedBox(
                         width: 10.w,
-                        
                       );
                     },
                     scrollDirection: Axis.horizontal,
@@ -157,13 +173,67 @@ class HomeScreen extends StatelessWidget {
                         decoration: BoxDecoration(
                             color: AppColors.primary,
                             borderRadius: BorderRadius.circular(16)),
-                        child:  Text('speech',style: CustomTextStyle.poppins600White16,),
+                        child: Text(
+                          'speech',
+                          style: CustomTextStyle.poppins600White16,
+                        ),
                       );
                     },
                   ),
-                )
-              ],
-            ),
+                ),
+              ),
+              SizedBox(
+                height: 25.h,
+              ),
+              //!Doctors
+              Padding(
+                padding: const EdgeInsets.only(left: 20,bottom: 10),
+                child: Row(
+                  children: [
+                    Text(
+                      AppStrings.doctors.tr(context),
+                      style: CustomTextStyle.poppins600secondary24,
+                    ),
+                    const Spacer(),
+                    //!see all
+                    TextButton(
+                      onPressed: () {},
+                      child: Row(
+                        children: [
+                          Text(
+                            AppStrings.seeAll.tr(context),
+                            style: CustomTextStyle.poppins400secondary20,
+                          ),
+                          const Icon(
+                            Icons.arrow_forward_rounded,
+                            color: AppColors.secondary,
+                            size: 33,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              
+              //!container doctor
+              SizedBox(
+                height: 280.h,
+                
+                child: ListView.separated(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 5,
+                  separatorBuilder: (context, index) {
+                    return SizedBox(
+                      width: 10.w,
+                    );
+                  },
+                  itemBuilder: ((context, index) {
+                    return const ListDoctorDetils();
+                  }),
+                ),
+              )
+            ],
           ),
         ),
       ),
