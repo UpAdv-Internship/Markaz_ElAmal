@@ -8,4 +8,6 @@ class AppAssets{
   static const String onBoard2 = '${basePath}onboard2.png';
   static const String onBoard3 = '${basePath}onboard3.png';
   static const String check = '${basePath}check.png';
+  static const String masterCard = '${basePath}master_card.png';
+  static const String visa = '${basePath}visa.png';
 }
