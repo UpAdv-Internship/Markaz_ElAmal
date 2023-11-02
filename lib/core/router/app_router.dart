@@ -6,6 +6,7 @@ import 'package:markaz_elamal/features/booking/presentation/screens/payment_opti
 import 'package:markaz_elamal/features/splash/presentation/screens/on_boarding_screen.dart';
 import 'package:markaz_elamal/features/booking/presentation/screens/doctor_profile.dart';
 import 'package:markaz_elamal/features/splash/presentation/screens/splash.dart';
+import 'package:markaz_elamal/features/home/presentation/screens/home.dart';
 
 class Routes {
   static const String initialRoute = '/';

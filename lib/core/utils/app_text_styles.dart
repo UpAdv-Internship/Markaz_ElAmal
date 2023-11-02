@@ -21,6 +21,12 @@ abstract class CustomTextStyle {
     fontWeight: FontWeight.w700,
     fontSize: 24.sp,
   );
+  static final poppins700White16 = TextStyle(
+    fontFamily: "Poppins",
+    color: AppColors.white,
+    fontWeight: FontWeight.w700,
+    fontSize: 16.sp,
+  );
   static final poppins500White24 = TextStyle(
     fontFamily: "Poppins",
     color: AppColors.white,
