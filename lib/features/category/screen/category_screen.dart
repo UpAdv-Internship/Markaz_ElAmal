@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:markaz_elamal/core/locale/app_locale.dart';
 import 'package:markaz_elamal/core/utils/app_strings.dart';
 
 import '../../../core/utils/app_assets.dart';
@@ -23,120 +22,73 @@ class CategoryScreen extends StatelessWidget{
         backgroundColor: const Color(0xff336EA6),
       ),
       body: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: Column(
-              children: [
-                Row(
-                  children: [
+          child: GridView.count(
+            crossAxisCount: 2,
+            padding: const EdgeInsets.all(9.0),
+            childAspectRatio: 0.8,
+            mainAxisSpacing: 10.0.h,
+            crossAxisSpacing: 10.0.w,
+            children: [
 
-                    // Speech Category
+                      // Speech Category
 
-                    InkWell(
-                      onTap: (){
-                        //navigate(context: context, route: Routes.??())
-                      },
-                      child: ContainerReuse(
-                        imageOfDis: Image.asset(AppAssets.speech),
-                        desc: 'Speech',
-                        distanceBetweenImageAndText: 15.h,
-                      ),
-                    ),
-                     SizedBox(
-                      width: 26.w,
-                    ),
+                      ContainerReuse(
+                          onTap: (){
+                            //navigate(context: context, route: Routes.??);
+                          },
+                          imageOfDis: Image.asset(AppAssets.speech),
+                          desc: 'Speech',
+                          distanceBetweenImageAndText: 15.h,
+                        ),
 
-                    // Autism Category
+              // Autism
 
-                    InkWell(
-                      onTap: (){
-                      //navigate(context: context, route: Routes.??())
-                      },
-                      child: ContainerReuse(
-                        imageOfDis: Image.asset(AppAssets.aut),
-                        desc: 'Autism',
-                        distanceBetweenImageAndText: 15.h,
-                      ),
-                    ),
-                  ],
-                ),
-                 SizedBox(
-                  height: 20.h,
-                ),
-                Row(
-                  children: [
+              ContainerReuse(
+                          onTap: (){
+                            //navigate(context: context, route: Routes.??);
+                          },
+                          imageOfDis: Image.asset(AppAssets.aut),
+                          desc: 'Autism',
+                          distanceBetweenImageAndText: 15.h,
+                        ),
+              // learn diff
+              ContainerReuse(
+                          onTap: (){
+                            //navigate(context: context, route: Routes.??);
+                          },
+                          imageOfDis: Image.asset(AppAssets.learnDiff),
+                          desc: 'Learning difficulties',
+                          distanceBetweenImageAndText: 15.h,
+                        ),
+              // intTest
+              ContainerReuse(
+                          onTap: (){
+                            //navigate(context: context, route: Routes.??);
+                          },
+                          imageOfDis: Image.asset(AppAssets.intTest),
+                          desc: 'Intelligence test',
+                          distanceBetweenImageAndText: 15.h,
+                        ),
+              // behavior
+              ContainerReuse(
+                          onTap: (){
+                            //navigate(context: context, route: Routes.??);
+                          },
+                          imageOfDis: Image.asset(AppAssets.behMod),
+                          desc: 'Behavior modification',
+                          distanceBetweenImageAndText: 15.h,
+                        ),
+              // skills Dev
+              ContainerReuse(
+                          onTap: (){
+                            //navigate(context: context, route: Routes.??);
+                          },
+                          imageOfDis: Image.asset(AppAssets.skillsDevelop),
+                          desc: 'Skills development',
+                          distanceBetweenImageAndText: 15.h,
+                        ),
 
-                    // Learning Diff
-
-                    InkWell(
-                      onTap: (){
-                        //navigate(context: context, route: Routes.??())
-                      },
-                      child: ContainerReuse(
-                        imageOfDis: Image.asset(AppAssets.learnDiff),
-                        desc: 'learning\nDifficulties',
-                        distanceBetweenImageAndText: 1.h,
-                      ),
-                    ),
-                     SizedBox(
-                      width: 26.w,
-                    ),
-
-                    // Intelligence Test
-
-                    InkWell(
-                      onTap: (){
-                        //navigate(context: context, route: Routes.??())
-                      },
-                      child: ContainerReuse(
-                        imageOfDis: Image.asset(AppAssets.intTest),
-                        desc: 'intelligence\nTest',
-                        distanceBetweenImageAndText: 1.h,
-                      ),
-                    ),
-                  ],
-                ),
-                 SizedBox(
-                  height: 20.h,
-                ),
-                Row(
-                  children: [
-
-                    // behivor modi
-
-                    InkWell(
-                      onTap: (){
-                        //navigate(context: context, route: Routes.??())
-                      },
-                      child: ContainerReuse(
-                        imageOfDis: Image.asset(AppAssets.behMod),
-                        desc: 'behavior\nModification',
-                        distanceBetweenImageAndText: 1.h,
-
-                      ),
-                    ),
-                     SizedBox(
-                      width: 26.w,
-                    ),
-
-                    // Skills development
-
-                    InkWell(
-                      onTap: (){
-                        //navigate(context: context, route: Routes.??())
-                      },
-                      child: ContainerReuse(
-                        imageOfDis: Image.asset(AppAssets.skillsDevelop),
-                        desc: 'skills\nDevelopment',
-                        distanceBetweenImageAndText: 2.h,
-
-                      ),
-                    ),
-                  ],
-                ),
-
-              ],
-            ),
+  ],
           ),
         ),
 
