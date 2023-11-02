@@ -2,8 +2,10 @@ import 'package:easy_date_timeline/easy_date_timeline.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:markaz_elamal/core/common/common.dart';
 import 'package:markaz_elamal/core/database/cache/cache_helper.dart';
 import 'package:markaz_elamal/core/locale/app_locale.dart';
+import 'package:markaz_elamal/core/router/app_router.dart';
 import 'package:markaz_elamal/core/services/service_locator.dart';
 import 'package:markaz_elamal/core/utils/app_colors.dart';
 import 'package:markaz_elamal/core/utils/app_strings.dart';
@@ -21,8 +23,10 @@ class DoctorProfile extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: AppColors.primary,
         leading: IconButton(
-          onPressed: () {}, //* Navigate to Doctors Category
-          icon: const Icon(Icons.arrow_back_ios_new),
+          onPressed: () {
+            //* Naviagte method
+          },
+          icon: const Icon(Icons.arrow_back_ios_rounded),
         ),
       ),
       body: SingleChildScrollView(
@@ -259,6 +263,7 @@ class DoctorProfile extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
+                              //! Send Message Button
                               CustomElevatedButton(
                                 onPressed: () {},
                                 text: AppStrings.sendMessage.tr(context),
@@ -267,8 +272,13 @@ class DoctorProfile extends StatelessWidget {
                                 borderColor: AppColors.secondary,
                               ),
                               SizedBox(width: 54.w),
+                              //! Book Button
                               CustomElevatedButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  navigate(
+                                      context: context,
+                                      route: Routes.paymentOption);
+                                },
                                 text: AppStrings.bookNow.tr(context),
                               ),
                             ],

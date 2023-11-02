@@ -28,4 +28,23 @@ class BookingCubit extends Cubit<BookingState> {
     activeTime = index;
     emit(ChangeTimeState());
   }
+
+  //! Select Payment
+  bool isSelected1 = false;
+  bool isSelected2 = false;
+  bool isSelected3 = true;
+  changeSelectedPayment(int x) {
+    isSelected1 = isSelected2 = isSelected3 = false;
+    switch (x) {
+      case 1:
+        isSelected1 = true;
+      case 2:
+        isSelected2 = true;
+      case 3:
+        isSelected3 = true;
+        break;
+      default:
+    }
+    emit(ChangeSelectedPaymentState());
+  }
 }

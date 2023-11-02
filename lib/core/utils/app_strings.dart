@@ -52,6 +52,7 @@ class AppStrings {
   static const String expires = "expires";
   static const String currentMethod = "currentMethod";
   static const String cashPayment = "cashPayment";
+  static const String defaultMethod = "defaultMethod";
   static const String yourAppointmentIsSuccess = "yourAppointmentIsSuccess";
   //! Chat
   static const String chats = "chats";
