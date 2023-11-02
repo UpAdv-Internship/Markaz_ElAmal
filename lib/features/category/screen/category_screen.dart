@@ -47,7 +47,7 @@ class CategoryScreen extends StatelessWidget{
                           onTap: (){
                             //navigate(context: context, route: Routes.??);
                           },
-                          imageOfDis: Image.asset(AppAssets.aut),
+                          imageOfDis: Image.asset(AppAssets.speech),
                           desc: 'Autism',
                           distanceBetweenImageAndText: 15.h,
                         ),
@@ -56,7 +56,7 @@ class CategoryScreen extends StatelessWidget{
                           onTap: (){
                             //navigate(context: context, route: Routes.??);
                           },
-                          imageOfDis: Image.asset(AppAssets.learnDiff),
+                          imageOfDis: Image.asset(AppAssets.speech),
                           desc: 'Learning difficulties',
                           distanceBetweenImageAndText: 15.h,
                         ),
@@ -65,7 +65,7 @@ class CategoryScreen extends StatelessWidget{
                           onTap: (){
                             //navigate(context: context, route: Routes.??);
                           },
-                          imageOfDis: Image.asset(AppAssets.intTest),
+                          imageOfDis: Image.asset(AppAssets.speech),
                           desc: 'Intelligence test',
                           distanceBetweenImageAndText: 15.h,
                         ),
@@ -74,7 +74,7 @@ class CategoryScreen extends StatelessWidget{
                           onTap: (){
                             //navigate(context: context, route: Routes.??);
                           },
-                          imageOfDis: Image.asset(AppAssets.behMod),
+                          imageOfDis: Image.asset(AppAssets.speech),
                           desc: 'Behavior modification',
                           distanceBetweenImageAndText: 15.h,
                         ),
@@ -83,7 +83,7 @@ class CategoryScreen extends StatelessWidget{
                           onTap: (){
                             //navigate(context: context, route: Routes.??);
                           },
-                          imageOfDis: Image.asset(AppAssets.skillsDevelop),
+                          imageOfDis: Image.asset(AppAssets.speech),
                           desc: 'Skills development',
                           distanceBetweenImageAndText: 15.h,
                         ),
