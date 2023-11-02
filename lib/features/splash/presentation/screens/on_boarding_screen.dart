@@ -131,11 +131,12 @@ class OnBoardingScreen extends StatelessWidget {
                                           spacing: 10),
                                     ),
                                     index != 2
+                                    //!next button
                                         ? TextButton(
                                             onPressed: () {
                                               controller.nextPage(
                                                   duration: const Duration(
-                                                      milliseconds: 500),
+                                                      microseconds: 200),
                                                   curve: Curves.bounceIn);
                                             },
                                             child: Row(
