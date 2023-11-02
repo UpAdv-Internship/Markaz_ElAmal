@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:markaz_elamal/core/locale/app_locale.dart';
 import 'package:markaz_elamal/core/utils/app_assets.dart';
 import 'package:markaz_elamal/core/utils/app_colors.dart';
@@ -23,7 +24,7 @@ class HomeScreen extends StatelessWidget {
             children: [
               //!message and notifications
               Padding(
-                padding: const EdgeInsets.only(left: 20,top: 20,right: 20),
+                padding: const EdgeInsets.only(left: 20, top: 20, right: 20),
                 child: Row(
                   children: [
                     Image.asset(
@@ -61,11 +62,11 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 10.h,
+                height: 5.h,
               ),
               //!search
               Padding(
-                padding: const EdgeInsets.only(left: 20,top: 20,right: 20),
+                padding: const EdgeInsets.only(left: 20, top: 20, right: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -93,7 +94,7 @@ class HomeScreen extends StatelessWidget {
               ),
               //!sliderr
               Padding(
-                padding: const EdgeInsets.only(left: 20,right: 20),
+                padding: const EdgeInsets.only(left: 20, right: 20),
                 child: ImageSlideshow(
                   height: 150.h,
                   indicatorColor: AppColors.primary,
@@ -116,11 +117,13 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 25.h,
+                height: 10.h,
               ),
               //!Category
               Padding(
-               padding: const EdgeInsets.only(left: 20,),
+                padding: const EdgeInsets.only(
+                  left: 20,
+                ),
                 child: Row(
                   children: [
                     Text(
@@ -149,11 +152,11 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 15.h,
+                height: 10.h,
               ),
               //!list view category
               Padding(
-               padding: const EdgeInsets.only(left: 20),
+                padding: const EdgeInsets.only(left: 20),
                 child: SizedBox(
                   height: 60.h,
                   child: ListView.separated(
@@ -183,11 +186,11 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 25.h,
+                height: 10.h,
               ),
               //!Doctors
               Padding(
-                padding: const EdgeInsets.only(left: 20,bottom: 10),
+                padding: const EdgeInsets.only(left: 20, bottom: 10),
                 child: Row(
                   children: [
                     Text(
@@ -215,11 +218,10 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              
+
               //!container doctor
               SizedBox(
                 height: 280.h,
-                
                 child: ListView.separated(
                   scrollDirection: Axis.horizontal,
                   itemCount: 5,
@@ -236,6 +238,31 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
         ),
+        bottomNavigationBar: BottomNavigationBar(
+          
+            unselectedLabelStyle: CustomTextStyle.poppins400White16,
+            selectedLabelStyle: CustomTextStyle.poppins400White16,
+            iconSize: 25,
+            type: BottomNavigationBarType.fixed,
+            unselectedItemColor: AppColors.lightGrey,
+            backgroundColor: AppColors.primary,
+            unselectedIconTheme:
+                const IconThemeData(color: AppColors.lightGrey),
+            selectedItemColor: AppColors.white,
+            items: <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                  icon: const Icon(Icons.home),
+                  label: AppStrings.home.tr(context)),
+              BottomNavigationBarItem(
+                  icon: const Icon(Icons.apps_sharp),
+                  label: AppStrings.category.tr(context)),
+              BottomNavigationBarItem(
+                  icon: const Icon(Icons.watch_outlined),
+                  label: AppStrings.book.tr(context)),
+              BottomNavigationBarItem(
+                  icon: const Icon(Icons.person),
+                  label: AppStrings.profile.tr(context)),
+            ]),
       ),
     );
   }
