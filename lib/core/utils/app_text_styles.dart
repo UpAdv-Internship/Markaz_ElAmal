@@ -170,6 +170,12 @@ abstract class CustomTextStyle {
     fontWeight: FontWeight.w500,
     fontSize: 16.sp,
   );
+  static final poppins500lightGrey20 = TextStyle(
+    fontFamily: "Poppins",
+    color: AppColors.lightGrey,
+    fontWeight: FontWeight.w500,
+    fontSize: 20.sp,
+  );
   static final poppins700secondry20 = TextStyle(
     fontFamily: "Poppins",
     color: AppColors.secondary,
@@ -181,5 +187,17 @@ abstract class CustomTextStyle {
     color: AppColors.secondary,
     fontWeight: FontWeight.w600,
     fontSize: 20.sp,
+  );
+  static final openSans700secondry26 = TextStyle(
+    fontFamily: "Open Sans",
+    color: AppColors.secondary,
+    fontWeight: FontWeight.w700,
+    fontSize: 26.sp,
+  );
+  static final openSans700white26 = TextStyle(
+    fontFamily: "Open Sans",
+    color: AppColors.white,
+    fontWeight: FontWeight.w700,
+    fontSize: 26.sp,
   );
 }
