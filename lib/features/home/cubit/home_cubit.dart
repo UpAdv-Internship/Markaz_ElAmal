@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:markaz_elamal/features/booking/presentation/screens/doctor_profile.dart';
+import 'package:markaz_elamal/features/category/screen/category_screen.dart';
 import 'package:markaz_elamal/features/home/presentation/screens/home.dart';
 
 import 'home_state.dart';
@@ -10,7 +10,7 @@ class HomeCubit extends Cubit<HomeState> {
 
   List<Widget> screens = [
     const HomeScreen(),
-    const DoctorProfile(),
+    const CategoryScreen(),
     const HomeScreen(),
     const HomeScreen()
   ];

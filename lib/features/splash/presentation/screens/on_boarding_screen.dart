@@ -10,6 +10,7 @@ import 'package:markaz_elamal/core/utils/app_colors.dart';
 import 'package:markaz_elamal/core/utils/app_strings.dart';
 import 'package:markaz_elamal/core/utils/app_text_styles.dart';
 import 'package:markaz_elamal/features/splash/data/on_boarding_model/on_board_model.dart';
+import 'package:markaz_elamal/features/splash/presentation/functions/on_boarding.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnBoardingScreen extends StatelessWidget {
@@ -67,6 +68,7 @@ class OnBoardingScreen extends StatelessWidget {
                                 index != 2
                                     ? TextButton(
                                         onPressed: () {
+                                          onBoardingVisited();
                                           navigateReplacment(
                                               context: context,
                                               route: Routes.signIn);
@@ -155,6 +157,7 @@ class OnBoardingScreen extends StatelessWidget {
                                         //!Start
                                         : TextButton(
                                             onPressed: () {
+                                              onBoardingVisited();
                                               navigateReplacment(
                                                   context: context,
                                                   route: Routes.signIn);

@@ -2,7 +2,9 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:markaz_elamal/core/database/cache/cache_helper.dart';
 import 'package:markaz_elamal/core/router/app_router.dart';
+import 'package:markaz_elamal/core/services/service_locator.dart';
 import 'package:markaz_elamal/core/utils/app_colors.dart';
 
 void navigate({
@@ -29,9 +31,15 @@ void navigateReplacment({
   );
 }
 
-void navigateAfterThreeSeconds(context) {
+void navigateAfterThreeSeconds(context) async {
+  bool isOnBoardingVisited =
+      await sl<CacheHelper>().getData(key: "isOnBoardingVisited") ?? false;
   Future.delayed(const Duration(seconds: 3)).then((value) async {
-    navigateReplacment(context: context, route: Routes.onBoarding);
+    if (isOnBoardingVisited == true) {
+      navigateReplacment(context: context, route: Routes.signIn);
+    } else {
+      navigateReplacment(context: context, route: Routes.onBoarding);
+    }
   });
 }
 

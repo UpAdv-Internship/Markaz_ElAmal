@@ -101,7 +101,7 @@ class SignInForm extends StatelessWidget {
                           text: AppStrings.signin.tr(context),
                           onPressed: () {
                             navigate(
-                                context: context, route: Routes.doctorProfile);
+                                context: context, route: Routes.botthomNavv);
                           }),
                       SizedBox(height: 16.h),
 
