@@ -26,7 +26,7 @@ class DoctorProfile extends StatelessWidget {
         elevation: 0,
         leading: IconButton(
           onPressed: () {
-            //* Naviagte method
+            Navigator.pop(context);
           },
           icon: const Icon(Icons.arrow_back_ios_rounded),
         ),
