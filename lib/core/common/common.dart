@@ -31,7 +31,7 @@ void navigateReplacment({
 
 void navigateAfterThreeSeconds(context) {
   Future.delayed(const Duration(seconds: 3)).then((value) async {
-    navigate(context: context, route: Routes.onBoarding);
+    navigate(context: context, route: Routes.doctorProfile);
   });
 }
 
