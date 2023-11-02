@@ -9,8 +9,7 @@ import 'package:markaz_elamal/features/splash/presentation/screens/on_boarding_s
 import 'package:markaz_elamal/features/booking/presentation/screens/doctor_profile.dart';
 import 'package:markaz_elamal/features/splash/presentation/screens/splash.dart';
 
-import '../../features/booking/presentation/screens/booking_congratulations_screen.dart';
-import '../../features/booking/presentation/screens/payment_option.dart';
+
 import '../../features/category/screen/category_screen.dart';
 
 class Routes {
