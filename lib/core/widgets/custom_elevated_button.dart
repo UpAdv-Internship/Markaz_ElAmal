@@ -13,6 +13,7 @@ class CustomElevatedButton extends StatelessWidget {
     this.borderColor = AppColors.transparent,
     required this.onPressed,
     required this.text,
+    this.textStyle,
   });
   final String text;
   final VoidCallback onPressed;
@@ -21,6 +22,7 @@ class CustomElevatedButton extends StatelessWidget {
   final Color backgroundColor;
   final Color textColor;
   final Color borderColor;
+  final TextStyle? textStyle;
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
@@ -38,9 +40,10 @@ class CustomElevatedButton extends StatelessWidget {
       ),
       child: Text(
         text,
-        style: CustomTextStyle.poppins400White16.copyWith(
-          color: textColor,
-        ),
+        style: textStyle ??
+            CustomTextStyle.poppins400White16.copyWith(
+              color: textColor,
+            ),
       ),
     );
   }
