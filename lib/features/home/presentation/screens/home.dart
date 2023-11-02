@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:markaz_elamal/core/locale/app_locale.dart';
 import 'package:markaz_elamal/core/utils/app_assets.dart';
 import 'package:markaz_elamal/core/utils/app_colors.dart';
