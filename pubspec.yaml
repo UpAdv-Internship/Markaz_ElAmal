@@ -39,9 +39,10 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   flutter_screenutil: ^5.9.0
-  font_awesome_flutter: ^10.6.0
   fluttertoast: ^8.2.2
+  font_awesome_flutter: ^10.6.0
   get_it: ^7.6.4
+ 
   image_picker: ^1.0.4
   shared_preferences: ^2.2.2
   smooth_page_indicator: ^1.1.0
