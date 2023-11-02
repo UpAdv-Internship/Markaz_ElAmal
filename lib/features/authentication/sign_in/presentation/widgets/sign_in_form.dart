@@ -100,15 +100,8 @@ class SignInForm extends StatelessWidget {
                       CustomAuthenticationBtn(
                           text: AppStrings.signin.tr(context),
                           onPressed: () {
-                            if (context
-                                .read<SignInCubit>()
-                                .signInFormController
-                                .currentState!
-                                .validate()) {
-                              navigate(
-                                  context: context,
-                                  route: Routes.doctorProfile);
-                            }
+                            navigate(
+                                context: context, route: Routes.doctorProfile);
                           }),
                       SizedBox(height: 16.h),
 
