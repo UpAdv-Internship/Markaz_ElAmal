@@ -21,6 +21,12 @@ abstract class CustomTextStyle {
     fontWeight: FontWeight.w700,
     fontSize: 24.sp,
   );
+  static final poppins700White16 = TextStyle(
+    fontFamily: "Poppins",
+    color: AppColors.white,
+    fontWeight: FontWeight.w700,
+    fontSize: 16.sp,
+  );
   static final poppins500White24 = TextStyle(
     fontFamily: "Poppins",
     color: AppColors.white,
@@ -33,12 +39,24 @@ abstract class CustomTextStyle {
     fontWeight: FontWeight.w600,
     fontSize: 24.sp,
   );
+  static final poppins600secondary20 = TextStyle(
+    fontFamily: "Poppins",
+    color: AppColors.secondary,
+    fontWeight: FontWeight.w600,
+    fontSize: 20.sp,
+  );
 
   static final poppins500secondary20 = TextStyle(
     fontFamily: "Poppins",
     color: AppColors.secondary,
     fontWeight: FontWeight.w500,
     fontSize: 20.sp,
+  );
+  static final poppins500secondary14 = TextStyle(
+    fontFamily: "Poppins",
+    color: AppColors.secondary,
+    fontWeight: FontWeight.w500,
+    fontSize: 14.sp,
   );
 
   static final poppins500secondary24 = TextStyle(
@@ -97,6 +115,12 @@ abstract class CustomTextStyle {
     fontWeight: FontWeight.w600,
     fontSize: 16.sp,
   );
+  static final poppins600secondary32 = TextStyle(
+    fontFamily: "Poppins",
+    color: AppColors.secondary,
+    fontWeight: FontWeight.w600,
+    fontSize: 32.sp,
+  );
   static final poppins400secondary16 = TextStyle(
     fontFamily: "Poppins",
     color: AppColors.secondary,
@@ -139,5 +163,23 @@ abstract class CustomTextStyle {
     color: AppColors.lightGrey,
     fontWeight: FontWeight.w500,
     fontSize: 14.sp,
+  );
+  static final poppins500lightGrey16 = TextStyle(
+    fontFamily: "Poppins",
+    color: AppColors.lightGrey,
+    fontWeight: FontWeight.w500,
+    fontSize: 16.sp,
+  );
+  static final poppins700secondry20 = TextStyle(
+    fontFamily: "Poppins",
+    color: AppColors.secondary,
+    fontWeight: FontWeight.w700,
+    fontSize: 20.sp,
+  );
+  static final openSans600secondry20 = TextStyle(
+    fontFamily: "Open Sans",
+    color: AppColors.secondary,
+    fontWeight: FontWeight.w600,
+    fontSize: 20.sp,
   );
 }

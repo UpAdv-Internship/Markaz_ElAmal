@@ -39,6 +39,7 @@
     "expires" : "Expires",
     "currentMethod" : "Current Method",
     "cashPayment" : "Cash Payment",
+    "defaultMethod" : "Default Method",
     "yourAppointmentIsSuccess" : "Your Appointment Is Success",
     "chats" : "Chats",
     "typeMessage" : "Type Message",

@@ -85,10 +85,10 @@ packages:
     dependency: "direct main"
     description:
       name: easy_date_timeline
-      sha256: b801b2fb8b5f97eeee1433e1e1716a496f4a2019c5c05caf34ede2cce83e46d5
+      sha256: "084450183350ea8f3e658b2b073b691c8d170c5c64eeb32c6cda3c32c78aba6f"
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.1"
+    version: "1.0.2"
   fake_async:
     dependency: transitive
     description:
@@ -158,6 +158,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "8.1.3"
+  flutter_image_slideshow:
+    dependency: "direct main"
+    description:
+      name: flutter_image_slideshow
+      sha256: ed259d96aea889b6ddc2b641891c3b721ec8ed33e160f08f2ef11acf0438984f
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.6"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -197,6 +205,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  font_awesome_flutter:
+    dependency: "direct main"
+    description:
+      name: font_awesome_flutter
+      sha256: "52671aea66da73b58d42ec6d0912b727a42248dd9a7c76d6c20f275783c48c08"
+      url: "https://pub.dev"
+    source: hosted
+    version: "10.6.0"
   fluttertoast:
     dependency: "direct main"
     description:
