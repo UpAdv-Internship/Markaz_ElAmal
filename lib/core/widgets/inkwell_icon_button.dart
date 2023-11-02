@@ -1,6 +1,5 @@
 
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:markaz_elamal/core/utils/app_colors.dart';
 
 class InkWellIconButton extends StatelessWidget {
