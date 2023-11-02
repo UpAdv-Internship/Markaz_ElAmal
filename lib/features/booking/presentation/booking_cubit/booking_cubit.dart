@@ -4,7 +4,14 @@ import 'package:markaz_elamal/features/booking/presentation/booking_cubit/bookin
 class BookingCubit extends Cubit<BookingState> {
   BookingCubit() : super(BookingInitial());
 
-  //! Select Date
+  //! Select date in book screen
+  //  DateTime? profileFocusDate = DateTime.now();
+  // changeDate(selectedDate) {
+  //   profileFocusDate = selectedDate;
+  //   emit(ChangeDateState());
+  // }
+
+  //! Select date in doctor profile
   DateTime? focusDate = DateTime.now();
   changeDate(selectedDate) {
     focusDate = selectedDate;
@@ -46,5 +53,19 @@ class BookingCubit extends Cubit<BookingState> {
       default:
     }
     emit(ChangeSelectedPaymentState());
+  }
+
+  //! Grid View
+  bool isGrid = true;
+  int crossAxisNum = 2;
+  void gridViewChange(bool isGriddd) {
+    if (isGriddd == true) {
+      isGrid = true;
+      crossAxisNum = 2;
+    } else {
+      isGrid = false;
+      crossAxisNum = 1;
+    }
+    emit(ChangeGridViewState());
   }
 }
