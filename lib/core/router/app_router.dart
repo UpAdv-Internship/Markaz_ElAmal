@@ -9,6 +9,10 @@ import 'package:markaz_elamal/features/splash/presentation/screens/on_boarding_s
 import 'package:markaz_elamal/features/booking/presentation/screens/doctor_profile.dart';
 import 'package:markaz_elamal/features/splash/presentation/screens/splash.dart';
 
+import '../../features/booking/presentation/screens/booking_congratulations_screen.dart';
+import '../../features/booking/presentation/screens/payment_option.dart';
+import '../../features/category/screen/category_screen.dart';
+
 class Routes {
   static const String initialRoute = '/';
   static const String onBoarding = '/onBoarding';
@@ -16,6 +20,7 @@ class Routes {
   static const String signUp = '/signUp';
   static const String doctorProfile = '/doctorProfile';
   static const String home = '/HomeScreen';
+  static const String category = '/category';
   static const String paymentOption = '/paymentOption';
   static const String bookingCongratulations = '/bookingCongratulations';
   static const String botthomNavv = '/botthomNavv';
@@ -38,6 +43,8 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => const SignUpScreen());
       case Routes.doctorProfile:
         return MaterialPageRoute(builder: (_) => const DoctorProfile());
+      case Routes.category:
+        return MaterialPageRoute(builder: (_) => const CategoryScreen());
       case Routes.paymentOption:
         return MaterialPageRoute(builder: (_) => const PaymentOption());
       case Routes.bookingCongratulations:
