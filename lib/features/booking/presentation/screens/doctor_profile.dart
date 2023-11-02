@@ -13,6 +13,7 @@ import 'package:markaz_elamal/core/utils/app_text_styles.dart';
 import 'package:markaz_elamal/core/widgets/custom_elevated_button.dart';
 import 'package:markaz_elamal/features/booking/presentation/booking_cubit/booking_cubit.dart';
 import 'package:markaz_elamal/features/booking/presentation/booking_cubit/booking_state.dart';
+import 'package:markaz_elamal/features/booking/presentation/components/rate_container.dart';
 
 class DoctorProfile extends StatelessWidget {
   const DoctorProfile({super.key});
@@ -22,6 +23,7 @@ class DoctorProfile extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColors.primary,
+        elevation: 0,
         leading: IconButton(
           onPressed: () {
             //* Naviagte method
@@ -81,33 +83,7 @@ class DoctorProfile extends StatelessWidget {
                           ),
                           SizedBox(height: 6.h),
                           //* Rate
-                          Container(
-                            width: 80.w,
-                            height: 30.h,
-                            padding: EdgeInsets.symmetric(horizontal: 12.w),
-                            decoration: BoxDecoration(
-                              color: AppColors.primary,
-                              borderRadius: BorderRadius.circular(16.r),
-                              border: Border.all(color: AppColors.secondary),
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  '4.9',
-                                  style: CustomTextStyle.poppins600White16,
-                                ),
-                                SizedBox(
-                                  width: 8.h,
-                                ),
-                                const Icon(
-                                  Icons.star,
-                                  color: AppColors.markedStars,
-                                  size: 16,
-                                )
-                              ],
-                            ),
-                          ),
+                          const RateContainer(rate: 4.9),
                           SizedBox(height: 12.h),
                           //* Description
                           Text(

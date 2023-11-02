@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:markaz_elamal/features/authentication/sign_in/presentation/screens/sign_in_screen.dart';
 import 'package:markaz_elamal/features/authentication/sign_up/presentation/screens/sign_up_screen.dart';
+import 'package:markaz_elamal/features/booking/presentation/screens/book_screen.dart';
 import 'package:markaz_elamal/features/booking/presentation/screens/booking_congratulations_screen.dart';
 import 'package:markaz_elamal/features/booking/presentation/screens/payment_option.dart';
 import 'package:markaz_elamal/features/splash/presentation/screens/on_boarding_screen.dart';
@@ -15,6 +16,7 @@ class Routes {
   static const String doctorProfile = '/doctorProfile';
   static const String paymentOption = '/paymentOption';
   static const String bookingCongratulations = '/bookingCongratulations';
+  static const String bookScreen = '/bookScreen';
 }
 
 class AppRoutes {
@@ -34,6 +36,8 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => const PaymentOption());
       case Routes.bookingCongratulations:
         return MaterialPageRoute(builder: (_) => const BookingCongratulations());
+      case Routes.bookScreen:
+        return MaterialPageRoute(builder: (_) => const BookScreen());
 
       default:
         return MaterialPageRoute(
