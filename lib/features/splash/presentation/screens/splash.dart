@@ -1,10 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:markaz_elamal/core/common/common.dart';
+import 'package:markaz_elamal/core/locale/app_locale.dart';
 import 'package:markaz_elamal/core/utils/app_assets.dart';
+import 'package:markaz_elamal/core/utils/app_strings.dart';
 import 'package:markaz_elamal/core/utils/app_text_styles.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    navigateAfterThreeSeconds(context);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +32,7 @@ class SplashScreen extends StatelessWidget {
                 height: 12.h,
               ),
               Text(
-                'Markaz ElAmal',
+                AppStrings.markazElAmal.tr(context),
                 style: CustomTextStyle.peralta400secondary24,
               )
             ],

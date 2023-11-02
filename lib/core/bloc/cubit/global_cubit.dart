@@ -6,17 +6,27 @@ import 'package:markaz_elamal/core/services/service_locator.dart';
 class GlobalCubit extends Cubit<GlobalState> {
   GlobalCubit() : super(GlobalInitial());
 
+  String langCode = 'ar';
+
   void changeLang(String codeLang) async {
     emit(ChangeLangLoading());
+    langCode = codeLang;
     await sl<CacheHelper>().cacheLanguage(codeLang);
     emit(ChangeLangSuccess());
   }
 
-  String getCachedLang() {
+  void getCachedLang() {
     emit(ChangeLangLoading());
 
-    final String cachedLang = sl<CacheHelper>().getCachedLanguage();
+    final cachedLang = sl<CacheHelper>().getCachedLanguage();
+    langCode = cachedLang;
     emit(ChangeLangSuccess());
-    return cachedLang;
+  }
+
+  void switchLang() {
+    String cachedLang = sl<CacheHelper>().getCachedLanguage();
+    sl<CacheHelper>().cacheLanguage(cachedLang == "ar" ? "en" : "ar");
+    langCode = sl<CacheHelper>().getCachedLanguage();
+    emit(ChangeLangSuccess());
   }
 }

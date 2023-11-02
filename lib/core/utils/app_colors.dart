@@ -5,6 +5,7 @@ class AppColors {
   static const Color secondary = Color(0xff233B55);
   static const Color white = Color(0xffFFFFFF);
   static const Color red = Colors.red;
+  static const Color green = Colors.green;
   static const Color markedStars = Color(0xffFFE665);
   static const Color unMarkedStars = Color(0xffD9D9D9);
   // Setting
@@ -14,4 +15,5 @@ class AppColors {
   static const Color rateApp = Color(0xffF6BB86);
   static const Color feedback = Color(0xffFFDF92);
   static const Color lightGrey = Color(0xffBDCAD6);
+  static const Color transparent = Colors.transparent;
 }
