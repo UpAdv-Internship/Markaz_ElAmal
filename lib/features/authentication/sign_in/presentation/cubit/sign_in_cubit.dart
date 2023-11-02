@@ -5,6 +5,7 @@ import 'package:markaz_elamal/features/authentication/sign_in/presentation/cubit
 class SignInCubit extends Cubit<SignInState> {
   SignInCubit() : super(SignInInitial());
   GlobalKey<FormState> signInFormController = GlobalKey();
+  TextEditingController emailTextEditingController = TextEditingController();
   TextEditingController passwordTextEditingController = TextEditingController();
   bool obscurePasswordTextValue = true;
   void obscurePasswordText() {

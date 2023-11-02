@@ -15,7 +15,7 @@ class CustomSignUpFormBanner extends StatelessWidget {
         const CustomBanner(),
         //!Sign In Form
         Positioned(
-          top: -134.h,
+          top: -200.h,
           right: 44.w,
           child: const SignUpForm(),
         ),

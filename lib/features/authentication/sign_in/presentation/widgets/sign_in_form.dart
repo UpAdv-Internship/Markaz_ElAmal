@@ -40,9 +40,8 @@ class SignInForm extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 12.w),
                 child: Form(
                   key: context.read<SignInCubit>().signInFormController,
-                  child: Column(
+                  child: ListView(
                     children: [
-                      SizedBox(height: 5.h),
                       //!Logo
                       const LogoWithTextWidget(),
                       SizedBox(height: 20.h),
@@ -56,13 +55,14 @@ class SignInForm extends StatelessWidget {
                           }
                           return null;
                         },
-                        controller: TextEditingController(),
+                        controller: context
+                            .read<SignInCubit>()
+                            .emailTextEditingController,
                         labelText: AppStrings.email.tr(context),
                         prefixIcon: Icon(Icons.email_outlined, size: 30.w),
                       ),
                       SizedBox(height: 16.h),
                       //!Password
-
                       CustomFormTextFiled(
                         obscureText: context
                             .read<SignInCubit>()
@@ -114,9 +114,11 @@ class SignInForm extends StatelessWidget {
 
                       //!Forgot Password
 
-                      Text(
-                        AppStrings.forgetPassword.tr(context),
-                        style: CustomTextStyle.poppins600White16,
+                      Align(
+                        child: Text(
+                          AppStrings.forgetPassword.tr(context),
+                          style: CustomTextStyle.poppins600White16,
+                        ),
                       ),
                     ],
                   ),
