@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:markaz_elamal/core/locale/app_locale.dart';
 import 'package:markaz_elamal/core/utils/app_assets.dart';
@@ -8,8 +7,9 @@ import 'package:markaz_elamal/core/utils/app_strings.dart';
 import 'package:markaz_elamal/core/utils/app_text_styles.dart';
 import 'package:markaz_elamal/core/widgets/inkwell_icon_button.dart';
 import 'package:markaz_elamal/features/home/widget/List_doctor_detils.dart';
-import 'package:markaz_elamal/features/home/widget/custom_images.dart';
+import 'package:markaz_elamal/features/home/widget/app_bar_home.dart';
 import 'package:markaz_elamal/features/home/widget/custom_text_field_search.dart';
+import 'package:markaz_elamal/features/home/widget/slider_images.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -18,52 +18,16 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         body: SingleChildScrollView(
           child: Column(
             children: [
               //!message and notifications
-              Padding(
-                padding: const EdgeInsets.only(left: 20, top: 20, right: 20),
-                child: Row(
-                  children: [
-                    Image.asset(
-                      AppAssets.appLogo,
-                      width: 25.w,
-                      height: 30.h,
-                    ),
-                    SizedBox(
-                      width: 6.5.w,
-                    ),
-                    Text(
-                      AppStrings.markazElAmal.tr(context),
-                      style: CustomTextStyle.peralta400White16
-                          .copyWith(color: AppColors.secondary),
-                    ),
-                    const Spacer(),
-                    InkWellIconButton(
-                        height: 40.h,
-                        width: 40.w,
-                        icon: const Icon(Icons.notifications_outlined,
-                            color: AppColors.white),
-                        onTap: () {}),
-                    SizedBox(
-                      width: 15.w,
-                    ),
-                    InkWellIconButton(
-                        height: 40.h,
-                        width: 40.w,
-                        icon: const Icon(
-                          Icons.messenger_outline,
-                          color: AppColors.white,
-                        ),
-                        onTap: () {}),
-                  ],
-                ),
-              ),
+              const AppBarHome(),
               SizedBox(
                 height: 5.h,
               ),
-              //!search
+              //!search text field
               Padding(
                 padding: const EdgeInsets.only(left: 20, top: 20, right: 20),
                 child: Row(
@@ -92,29 +56,7 @@ class HomeScreen extends StatelessWidget {
                 height: 30.h,
               ),
               //!sliderr
-              Padding(
-                padding: const EdgeInsets.only(left: 20, right: 20),
-                child: ImageSlideshow(
-                  height: 150.h,
-                  indicatorColor: AppColors.primary,
-                  onPageChanged: (value) {
-                    debugPrint('Page changed: $value');
-                  },
-                  autoPlayInterval: 3000,
-                  isLoop: false,
-                  children: const [
-                    CustomImages(
-                      imgPath: AssetImage(AppAssets.imageSlider),
-                    ),
-                    CustomImages(
-                      imgPath: AssetImage(AppAssets.imageSlider),
-                    ),
-                    CustomImages(
-                      imgPath: AssetImage(AppAssets.imageSlider),
-                    ),
-                  ],
-                ),
-              ),
+              const SliderImage(),
               SizedBox(
                 height: 10.h,
               ),
@@ -218,7 +160,7 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
 
-              //!container doctor
+              //!List view doctor
               SizedBox(
                 height: 280.h,
                 child: ListView.separated(
@@ -230,38 +172,18 @@ class HomeScreen extends StatelessWidget {
                     );
                   },
                   itemBuilder: ((context, index) {
-                    return const ListDoctorDetils();
+                    return const ListDoctorDetils(
+                      image: AppAssets.saraSmall,
+                      doctorExperience: '12 experience',
+                      doctorName: 'Dr: Sara Selim',
+                      doctorPrice: "\$ 20.99",
+                    );
                   }),
                 ),
               )
             ],
           ),
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          
-            unselectedLabelStyle: CustomTextStyle.poppins400White16,
-            selectedLabelStyle: CustomTextStyle.poppins400White16,
-            iconSize: 25,
-            type: BottomNavigationBarType.fixed,
-            unselectedItemColor: AppColors.lightGrey,
-            backgroundColor: AppColors.primary,
-            unselectedIconTheme:
-                const IconThemeData(color: AppColors.lightGrey),
-            selectedItemColor: AppColors.white,
-            items: <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                  icon: const Icon(Icons.home),
-                  label: AppStrings.home.tr(context)),
-              BottomNavigationBarItem(
-                  icon: const Icon(Icons.apps_sharp),
-                  label: AppStrings.category.tr(context)),
-              BottomNavigationBarItem(
-                  icon: const Icon(Icons.watch_outlined),
-                  label: AppStrings.book.tr(context)),
-              BottomNavigationBarItem(
-                  icon: const Icon(Icons.person),
-                  label: AppStrings.profile.tr(context)),
-            ]),
       ),
     );
   }

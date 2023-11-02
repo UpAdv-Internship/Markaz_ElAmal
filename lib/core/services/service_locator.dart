@@ -4,6 +4,7 @@ import 'package:markaz_elamal/core/database/cache/cache_helper.dart';
 import 'package:markaz_elamal/features/authentication/sign_in/presentation/cubit/sign_in_cubit.dart';
 import 'package:markaz_elamal/features/authentication/sign_up/presentation/cubit/sign_up_cubit.dart';
 import 'package:markaz_elamal/features/booking/presentation/booking_cubit/booking_cubit.dart';
+import 'package:markaz_elamal/features/home/cubit/home_cubit.dart';
 
 final sl = GetIt.instance;
 
@@ -13,6 +14,7 @@ void initServiceLocator() {
   //!Cubits
   sl.registerLazySingleton(() => GlobalCubit());
   sl.registerLazySingleton(() => BookingCubit());
+  sl.registerLazySingleton(() => HomeCubit());
   sl.registerLazySingleton(() => SignInCubit());
   sl.registerLazySingleton(() => SignUpCubit());
 }

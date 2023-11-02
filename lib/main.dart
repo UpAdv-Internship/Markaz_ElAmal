@@ -7,6 +7,7 @@ import 'package:markaz_elamal/core/services/service_locator.dart';
 import 'package:markaz_elamal/features/authentication/sign_in/presentation/cubit/sign_in_cubit.dart';
 import 'package:markaz_elamal/features/authentication/sign_up/presentation/cubit/sign_up_cubit.dart';
 import 'package:markaz_elamal/features/booking/presentation/booking_cubit/booking_cubit.dart';
+import 'package:markaz_elamal/features/home/cubit/home_cubit.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,6 +21,7 @@ void main() async {
         BlocProvider(create: (context) => sl<BookingCubit>()),
         BlocProvider(create: (context) => sl<SignInCubit>()),
         BlocProvider(create: (context) => sl<SignUpCubit>()),
+        BlocProvider(create: (context) => sl<HomeCubit>()),
       ],
       child: const MarkazElamal(),
     ),

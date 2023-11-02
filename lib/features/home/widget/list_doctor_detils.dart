@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:markaz_elamal/core/utils/app_assets.dart';
 import 'package:markaz_elamal/core/utils/app_colors.dart';
 import 'package:markaz_elamal/core/utils/app_text_styles.dart';
 
 class ListDoctorDetils extends StatelessWidget {
   const ListDoctorDetils({
-    super.key,
+    super.key, required this.image, required this.doctorName, required this.doctorExperience, required this.doctorPrice,
   });
-
+final String image;
+final String doctorName;
+final String doctorExperience;
+final String doctorPrice;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -32,7 +34,7 @@ class ListDoctorDetils extends StatelessWidget {
                   decoration: BoxDecoration(
                       color: AppColors.white,
                       borderRadius: BorderRadius.circular(4)),
-                  child: Image.asset(AppAssets.saraSmall),
+                  child: Image.asset(image,fit: BoxFit.fitHeight,),
                 ),
                 //! favorite icon
                 Positioned(
@@ -85,17 +87,17 @@ class ListDoctorDetils extends StatelessWidget {
               children: [
                 //doctor name
                 Text(
-                  'Dr: Sara Selim',
+                  doctorName,
                   style: CustomTextStyle.poppins600White20,
                 ),
                 //doctor experience
                 Text(
-                  '12 experience',
+                  doctorExperience,
                   style: CustomTextStyle.poppins600White16
                       .copyWith(color: AppColors.lightGrey),
                 ),
                 //doctor price
-                Text("\$ 20.99",
+                Text(doctorPrice,
                     style: CustomTextStyle.poppins700White16),
                 //Know more
                 GestureDetector(
