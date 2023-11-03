@@ -32,7 +32,7 @@ class CustomAuthenticationBtn extends StatelessWidget {
       backgroundColor: backgroundColor ?? AppColors.white,
       width: width ?? 300.w,
       height: height ?? 45.h,
-      textStyle: CustomTextStyle.poppins600primary24,
+      textStyle: textStyle ?? CustomTextStyle.poppins600primary24,
     );
   }
 }
