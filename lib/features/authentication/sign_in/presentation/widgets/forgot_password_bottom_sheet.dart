@@ -8,6 +8,7 @@ import 'package:markaz_elamal/core/utils/app_text_styles.dart';
 import 'package:markaz_elamal/core/widgets/custom_form_text_filed.dart';
 import 'package:markaz_elamal/features/authentication/common/custom_authentication_btn.dart';
 import 'package:markaz_elamal/features/authentication/sign_in/presentation/cubit/sign_in_cubit.dart';
+import 'package:markaz_elamal/features/authentication/sign_in/presentation/widgets/reset_password_bottom_sheet.dart';
 
 class ForgetPasswordBottomSheet extends StatelessWidget {
   const ForgetPasswordBottomSheet({super.key});
@@ -64,7 +65,9 @@ class ForgetPasswordBottomSheet extends StatelessWidget {
                     SizedBox(height: 45.h),
                     CustomAuthenticationBtn(
                       text: AppStrings.continuee.tr(context),
-                      onPressed: () {},
+                      onPressed: () {
+                        showResetPasswordBottomSheet(context);
+                      },
                       width: MediaQuery.of(context).size.width,
                       height: 60.h,
                       backgroundColor: AppColors.secondary,
