@@ -9,8 +9,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:markaz_elamal/core/widgets/logo_with_text_widget.dart';
 import 'package:markaz_elamal/core/widgets/custom_form_text_filed.dart';
 import 'package:markaz_elamal/features/authentication/common/custom_authentication_btn.dart';
-import 'package:markaz_elamal/features/authentication/sign_in/presentation/cubit/sign_in_cubit.dart';
-import 'package:markaz_elamal/features/authentication/sign_in/presentation/cubit/sign_in_state.dart';
+import 'package:markaz_elamal/features/authentication/sign_in/presentation/sign_cubit/sign_in_cubit.dart';
+import 'package:markaz_elamal/features/authentication/sign_in/presentation/sign_cubit/sign_in_state.dart';
 import 'package:markaz_elamal/features/authentication/sign_in/presentation/widgets/forgot_password_bottom_sheet.dart';
 import 'package:markaz_elamal/features/authentication/sign_in/presentation/widgets/have_an_account_widget.dart';
 
