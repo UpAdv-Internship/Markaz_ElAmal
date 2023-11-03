@@ -15,6 +15,7 @@ class CustomFormTextFiled extends StatelessWidget {
     this.suffixIcon,
     this.suffixIconColor,
     this.obscureText,
+    this.labelTextStyle,
   });
   final TextEditingController controller;
   final Color? color;
@@ -24,12 +25,12 @@ class CustomFormTextFiled extends StatelessWidget {
   final bool? obscureText;
   final Color? prefixIconColor;
   final Color? suffixIconColor;
-
+  final TextStyle? labelTextStyle;
   final String? Function(String?)? validator;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      style: CustomTextStyle.poppins400White16,
+      style: labelTextStyle ?? CustomTextStyle.poppins400White16,
       validator: validator,
       controller: controller,
       obscureText: obscureText ?? false,
@@ -40,7 +41,7 @@ class CustomFormTextFiled extends StatelessWidget {
         focusedBorder: getBorderSide(color: color),
         label: Text(
           labelText,
-          style: CustomTextStyle.poppins400White16,
+          style: labelTextStyle ?? CustomTextStyle.poppins400White16,
         ),
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,

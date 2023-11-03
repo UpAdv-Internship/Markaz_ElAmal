@@ -6,12 +6,12 @@ import 'package:markaz_elamal/core/locale/app_locale.dart';
 import 'package:markaz_elamal/core/router/app_router.dart';
 import 'package:markaz_elamal/core/utils/app_strings.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:markaz_elamal/core/utils/app_text_styles.dart';
 import 'package:markaz_elamal/core/widgets/logo_with_text_widget.dart';
 import 'package:markaz_elamal/core/widgets/custom_form_text_filed.dart';
 import 'package:markaz_elamal/features/authentication/common/custom_authentication_btn.dart';
-import 'package:markaz_elamal/features/authentication/sign_in/presentation/cubit/sign_in_cubit.dart';
-import 'package:markaz_elamal/features/authentication/sign_in/presentation/cubit/sign_in_state.dart';
+import 'package:markaz_elamal/features/authentication/sign_in/presentation/sign_cubit/sign_in_cubit.dart';
+import 'package:markaz_elamal/features/authentication/sign_in/presentation/sign_cubit/sign_in_state.dart';
+import 'package:markaz_elamal/features/authentication/sign_in/presentation/widgets/forgot_password_bottom_sheet.dart';
 import 'package:markaz_elamal/features/authentication/sign_in/presentation/widgets/have_an_account_widget.dart';
 
 class SignInForm extends StatelessWidget {
@@ -106,12 +106,8 @@ class SignInForm extends StatelessWidget {
                       SizedBox(height: 16.h),
 
                       //!Forgot Password
-
-                      Align(
-                        child: Text(
-                          AppStrings.forgetPassword.tr(context),
-                          style: CustomTextStyle.poppins600White16,
-                        ),
+                      const Align(
+                        child: ForgetPasswordBottomSheet(),
                       ),
                     ],
                   ),
@@ -119,7 +115,6 @@ class SignInForm extends StatelessWidget {
               ),
             ),
             SizedBox(height: 150.h),
-
             //!Don't Have An Account ?
             HaveAnAccountTextWidget(
               textOne: AppStrings.dontHaveAnAccount.tr(context),
