@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:markaz_elamal/core/utils/app_strings.dart';
 
+
 import '../../../core/utils/app_assets.dart';
 import '../common/container_reuse.dart';
+
 
 class CategoryScreen extends StatelessWidget{
   const CategoryScreen({super.key});
@@ -33,9 +35,7 @@ class CategoryScreen extends StatelessWidget{
                       // Speech Category
 
                       ContainerReuse(
-                          onTap: (){
-                            //navigate(context: context, route: Routes.??);
-                          },
+
                           imageOfDis: Image.asset(AppAssets.speech),
                           desc: 'Speech',
                           distanceBetweenImageAndText: 15.h,
@@ -44,46 +44,36 @@ class CategoryScreen extends StatelessWidget{
               // Autism
 
               ContainerReuse(
-                          onTap: (){
-                            //navigate(context: context, route: Routes.??);
-                          },
-                          imageOfDis: Image.asset(AppAssets.speech),
+
+                          imageOfDis: Image.asset(AppAssets.aut),
                           desc: 'Autism',
                           distanceBetweenImageAndText: 15.h,
                         ),
               // learn diff
               ContainerReuse(
-                          onTap: (){
-                            //navigate(context: context, route: Routes.??);
-                          },
-                          imageOfDis: Image.asset(AppAssets.speech),
+
+                          imageOfDis: Image.asset(AppAssets.learnDiff),
                           desc: 'Learning difficulties',
                           distanceBetweenImageAndText: 15.h,
                         ),
               // intTest
               ContainerReuse(
-                          onTap: (){
-                            //navigate(context: context, route: Routes.??);
-                          },
-                          imageOfDis: Image.asset(AppAssets.speech),
+
+                          imageOfDis: Image.asset(AppAssets.intTest),
                           desc: 'Intelligence test',
                           distanceBetweenImageAndText: 15.h,
                         ),
               // behavior
               ContainerReuse(
-                          onTap: (){
-                            //navigate(context: context, route: Routes.??);
-                          },
-                          imageOfDis: Image.asset(AppAssets.speech),
+
+                          imageOfDis: Image.asset(AppAssets.behMod),
                           desc: 'Behavior modification',
                           distanceBetweenImageAndText: 15.h,
                         ),
               // skills Dev
               ContainerReuse(
-                          onTap: (){
-                            //navigate(context: context, route: Routes.??);
-                          },
-                          imageOfDis: Image.asset(AppAssets.speech),
+
+                          imageOfDis: Image.asset(AppAssets.skillsDevelop),
                           desc: 'Skills development',
                           distanceBetweenImageAndText: 15.h,
                         ),
