@@ -9,19 +9,29 @@ class CustomAuthenticationBtn extends StatelessWidget {
     super.key,
     required this.text,
     required this.onPressed,
+    this.width,
+    this.height,
+    this.backgroundColor,
+    this.textColor,
+    this.textStyle,
   });
   final String text;
   final VoidCallback onPressed;
+  final double? width;
+  final double? height;
+  final Color? backgroundColor;
+  final Color? textColor;
+  final TextStyle? textStyle;
   @override
   Widget build(BuildContext context) {
     return CustomElevatedButton(
       onPressed: onPressed,
       text: text,
-      textColor: AppColors.primary,
+      textColor: textColor ?? AppColors.primary,
       borderColor: AppColors.white,
-      backgroundColor: AppColors.white,
-      width: 300.w,
-      height: 45.h,
+      backgroundColor: backgroundColor ?? AppColors.white,
+      width: width ?? 300.w,
+      height: height ?? 45.h,
       textStyle: CustomTextStyle.poppins600primary24,
     );
   }

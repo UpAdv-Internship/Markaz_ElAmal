@@ -107,11 +107,8 @@ class SignInForm extends StatelessWidget {
 
                       //!Forgot Password
 
-                      Align(
-                        child: Text(
-                          AppStrings.forgetPassword.tr(context),
-                          style: CustomTextStyle.poppins600White16,
-                        ),
+                      const Align(
+                        child: ForgetPasswordTextWidget(),
                       ),
                     ],
                   ),
@@ -131,6 +128,84 @@ class SignInForm extends StatelessWidget {
           ],
         );
       },
+    );
+  }
+}
+
+class ForgetPasswordTextWidget extends StatelessWidget {
+  const ForgetPasswordTextWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        showBottomSheet(
+            context: context,
+            elevation: 50,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(30.r),
+                topRight: Radius.circular(30.r),
+              ),
+            ),
+            builder: (context) {
+              return SizedBox(
+                height: MediaQuery.of(context).size.height / 2,
+                width: MediaQuery.of(context).size.width,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 26.w),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(height: 47.h),
+                      Text(
+                        AppStrings.forgetPassword.tr(context),
+                        style: CustomTextStyle.poppins600secondary24,
+                      ),
+                      SizedBox(height: 18.h),
+                      Text(
+                        AppStrings.enteryourEmailForVerificationProcess
+                            .tr(context),
+                        style: CustomTextStyle.poppins400secondary18,
+                      ),
+                      SizedBox(height: 30.h),
+                      Text(
+                        AppStrings.email.tr(context),
+                        style: CustomTextStyle.poppins600secondary24,
+                      ),
+                      SizedBox(height: 14.h),
+                      CustomFormTextFiled(
+                        controller: context
+                            .read<SignInCubit>()
+                            .forgetPasswordEmailTextEditingController,
+                        labelText: AppStrings.email.tr(context),
+                        prefixIcon: Icon(Icons.email_outlined, size: 30.w),
+                        color: AppColors.secondary,
+                        prefixIconColor: AppColors.secondary,
+                        labelTextStyle: CustomTextStyle.poppins400secondary16,
+                      ),
+                      SizedBox(height: 45.h),
+                      CustomAuthenticationBtn(
+                        text: AppStrings.continuee.tr(context),
+                        onPressed: () {},
+                        width: MediaQuery.of(context).size.width,
+                        height: 60.h,
+                        backgroundColor: AppColors.secondary,
+                        textColor: AppColors.white,
+                        textStyle: CustomTextStyle.poppins600White24,
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            });
+      },
+      child: Text(
+        AppStrings.forgetPassword.tr(context),
+        style: CustomTextStyle.poppins600White16,
+      ),
     );
   }
 }

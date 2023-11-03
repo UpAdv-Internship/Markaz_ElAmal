@@ -175,7 +175,7 @@ class SignUpForm extends StatelessWidget {
                           SizedBox(height: 16.h),
                           //! Sign Up Btn
                           CustomAuthenticationBtn(
-                              text: AppStrings.signin.tr(context),
+                              text: AppStrings.signup.tr(context),
                               onPressed: () {
                                 if (context
                                     .read<SignUpCubit>()
@@ -187,7 +187,6 @@ class SignUpForm extends StatelessWidget {
                                       route: Routes.doctorProfile);
                                 }
                               }),
-                          SizedBox(height: 250.h),
                         ],
                       ),
                     ),

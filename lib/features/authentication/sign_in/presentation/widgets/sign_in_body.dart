@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:markaz_elamal/core/locale/app_locale.dart';
 import 'package:markaz_elamal/core/utils/app_strings.dart';
 import 'package:markaz_elamal/features/authentication/sign_in/presentation/widgets/custom_form_banner.dart';
@@ -14,6 +15,7 @@ class SignInBody extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         CustomTitleHeader(text: AppStrings.letsStartWithSignIn.tr(context)),
+        SizedBox(height: 212.h),
         const CustomFormBanner(),
       ],
     );

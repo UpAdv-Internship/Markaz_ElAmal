@@ -7,6 +7,7 @@ class SignInCubit extends Cubit<SignInState> {
   GlobalKey<FormState> signInFormController = GlobalKey();
   TextEditingController emailTextEditingController = TextEditingController();
   TextEditingController passwordTextEditingController = TextEditingController();
+  TextEditingController forgetPasswordEmailTextEditingController = TextEditingController();
   bool obscurePasswordTextValue = true;
   void obscurePasswordText() {
     if (obscurePasswordTextValue == true) {
