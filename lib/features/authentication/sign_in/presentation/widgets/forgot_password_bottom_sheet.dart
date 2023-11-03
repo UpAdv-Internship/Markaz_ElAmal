@@ -22,8 +22,8 @@ class ForgetPasswordBottomSheet extends StatelessWidget {
       onTap: () {
         showBottomSheet(
           context: context,
-          elevation: 50,
           shape: RoundedRectangleBorder(
+              side: const BorderSide(color: AppColors.secondary, width: 2),
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(30.r),
                   topRight: Radius.circular(30.r))),
@@ -68,7 +68,7 @@ class ForgetPasswordBottomSheet extends StatelessWidget {
                       width: MediaQuery.of(context).size.width,
                       height: 60.h,
                       backgroundColor: AppColors.secondary,
-                      textColor: AppColors.white,
+                      textColor: AppColors.secondary,
                       textStyle: CustomTextStyle.poppins600White24,
                     ),
                   ],
