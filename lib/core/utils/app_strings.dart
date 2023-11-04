@@ -145,6 +145,7 @@ class AppStrings {
   static const String add = "add";
   static const String back = "back";
   static const String edit = "edit";
+  static const String editProfile = "editProfile";
   static const String cancel = "cancel";
   static const String savePreferences = "savePreferences";
   static const String submit = "submit";
