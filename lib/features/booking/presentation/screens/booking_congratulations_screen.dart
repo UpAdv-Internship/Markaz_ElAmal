@@ -44,7 +44,7 @@ class BookingCongratulations extends StatelessWidget {
             //! Back Button
             CustomElevatedButton(
               onPressed: () {
-                navigateReplacment(context: context, route: Routes.bookScreen);
+                navigateReplacment(context: context, route: Routes.botthomNavv);
               },
               text: AppStrings.back.tr(context),
             ),

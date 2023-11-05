@@ -20,7 +20,9 @@ class ProfileDetails extends StatelessWidget {
         titleTextStyle: CustomTextStyle.poppins600White24,
         centerTitle: true,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: const Icon(Icons.arrow_back_ios_new_outlined),
         ),
         actions: [

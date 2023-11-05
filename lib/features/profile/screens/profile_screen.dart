@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:markaz_elamal/core/common/common.dart';
 import 'package:markaz_elamal/core/locale/app_locale.dart';
+import 'package:markaz_elamal/core/router/app_router.dart';
 import 'package:markaz_elamal/core/utils/app_colors.dart';
 import 'package:markaz_elamal/core/utils/app_text_styles.dart';
 
@@ -13,7 +15,7 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  SafeArea(
+    return SafeArea(
       child: Scaffold(
         body: Center(
           child: Padding(
@@ -23,7 +25,10 @@ class ProfileScreen extends StatelessWidget {
                 SizedBox(
                   height: 15.h,
                 ),
-                Text(AppStrings.profile.tr(context),style: CustomTextStyle.poppins700secondary26,),
+                Text(
+                  AppStrings.profile.tr(context),
+                  style: CustomTextStyle.poppins700secondary26,
+                ),
                 SizedBox(
                   height: 25.h,
                 ),
@@ -39,9 +44,12 @@ class ProfileScreen extends StatelessWidget {
                   height: 14.h,
                 ),
 
-                 // Name
+                // Name
 
-                 Text('Name Here',style: CustomTextStyle.poppins600secondary24,),
+                Text(
+                  'Name Here',
+                  style: CustomTextStyle.poppins600secondary24,
+                ),
                 SizedBox(
                   height: 35.h,
                 ),
@@ -51,7 +59,7 @@ class ProfileScreen extends StatelessWidget {
                 ListTileProfile(
                   desc: AppStrings.history.tr(context),
                   image: Image.asset(AppAssets.history),
-                  onTap: (){},
+                  onTap: () {},
                 ),
                 SizedBox(
                   height: 10.h,
@@ -60,7 +68,9 @@ class ProfileScreen extends StatelessWidget {
                 ListTileProfile(
                   desc: AppStrings.profileDetailes.tr(context),
                   image: Image.asset(AppAssets.profileDetailes),
-                  onTap: (){},
+                  onTap: () {
+                    navigate(context: context, route: Routes.profileDetails);
+                  },
                 ),
                 SizedBox(
                   height: 10.h,
@@ -69,7 +79,7 @@ class ProfileScreen extends StatelessWidget {
                 ListTileProfile(
                   desc: AppStrings.chats.tr(context),
                   image: Image.asset(AppAssets.chat),
-                  onTap: (){},
+                  onTap: () {},
                 ),
                 SizedBox(
                   height: 10.h,
@@ -78,7 +88,7 @@ class ProfileScreen extends StatelessWidget {
                 ListTileProfile(
                   desc: AppStrings.settings.tr(context),
                   image: Image.asset(AppAssets.setting),
-                  onTap: (){},
+                  onTap: () {},
                 ),
                 SizedBox(
                   height: 10.h,
@@ -87,7 +97,7 @@ class ProfileScreen extends StatelessWidget {
                 ListTileProfile(
                   desc: AppStrings.help.tr(context),
                   image: Image.asset(AppAssets.help),
-                  onTap: (){},
+                  onTap: () {},
                 ),
                 SizedBox(
                   height: 10.h,
@@ -96,7 +106,7 @@ class ProfileScreen extends StatelessWidget {
                 ListTileProfile(
                   desc: AppStrings.logout.tr(context),
                   image: Image.asset(AppAssets.logout),
-                  onTap: (){},
+                  onTap: () {},
                 ),
               ],
             ),
@@ -106,4 +116,3 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 }
-

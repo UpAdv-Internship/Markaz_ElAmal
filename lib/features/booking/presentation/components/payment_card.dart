@@ -12,7 +12,8 @@ class PaymentCard extends StatelessWidget {
     this.cardNumber,
     this.expireDate,
     this.isCash = false,
-    this.isSelected = false, required this.onTap,
+    this.isSelected = false,
+    required this.onTap,
   });
   final String? image;
   final String? cardNumber;
@@ -26,7 +27,7 @@ class PaymentCard extends StatelessWidget {
       onTap: onTap,
       child: Container(
         width: 385.w,
-        height: 90.h,
+        height: 100.h,
         padding: EdgeInsets.symmetric(horizontal: 13.w, vertical: 20.h),
         decoration: BoxDecoration(
           border: Border.all(
