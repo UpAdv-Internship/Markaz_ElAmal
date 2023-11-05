@@ -7,6 +7,8 @@ import 'package:markaz_elamal/features/booking/presentation/screens/payment_opti
 import 'package:markaz_elamal/features/home/presentation/screens/bottom_bar.dart';
 import 'package:markaz_elamal/features/home/presentation/screens/home.dart';
 import 'package:markaz_elamal/features/category/screens/doctors_category.dart';
+import 'package:markaz_elamal/features/profile/profile_details_and_edit/presentation/screens/profile_details.dart';
+import 'package:markaz_elamal/features/profile/profile_details_and_edit/presentation/screens/profile_edit.dart';
 import 'package:markaz_elamal/features/splash/presentation/screens/on_boarding_screen.dart';
 import 'package:markaz_elamal/features/booking/presentation/screens/doctor_profile.dart';
 import 'package:markaz_elamal/features/splash/presentation/screens/splash.dart';
@@ -29,6 +31,8 @@ class Routes {
   static const String bookScreen = '/bookScreen';
   static const String botthomNavv = '/botthomNavv';
   static const String doctorsCategory = '/doctorsCategory';
+  static const String profileDetails = '/profileDetails';
+  static const String profileEdit = '/profileEdit';
   static const String profileScreen = '/profileScreen';
 }
 
@@ -61,6 +65,10 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => const DoctorsCategory());
       case Routes.profileScreen:
         return MaterialPageRoute(builder: (_) => const ProfileScreen());
+      case Routes.profileDetails:
+              return MaterialPageRoute(builder: (_) => const ProfileDetails());
+      case Routes.profileEdit:
+              return MaterialPageRoute(builder: (_) => const ProfileEdit());
 
       default:
         return MaterialPageRoute(
