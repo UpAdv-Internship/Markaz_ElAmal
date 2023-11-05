@@ -5,10 +5,11 @@ import 'package:markaz_elamal/core/locale/app_locale.dart';
 import 'package:markaz_elamal/core/router/app_router.dart';
 import 'package:markaz_elamal/core/utils/app_colors.dart';
 import 'package:markaz_elamal/core/utils/app_text_styles.dart';
+import 'package:markaz_elamal/features/profile/components/logout_alert_dialog.dart';
 
-import '../../../core/utils/app_assets.dart';
-import '../../../core/utils/app_strings.dart';
-import '../commons/list_tile.dart';
+import '../../../../core/utils/app_assets.dart';
+import '../../../../core/utils/app_strings.dart';
+import '../../components/list_tile.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -106,7 +107,12 @@ class ProfileScreen extends StatelessWidget {
                 ListTileProfile(
                   desc: AppStrings.logout.tr(context),
                   image: Image.asset(AppAssets.logout),
-                  onTap: () {},
+                  onTap: () {
+                    showDialog(
+                      context: context,
+                      builder: (context) => const LogoutAlertDialog(),
+                    );
+                  },
                 ),
               ],
             ),
@@ -116,3 +122,4 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 }
+

@@ -6,9 +6,9 @@ import 'package:markaz_elamal/core/services/service_locator.dart';
 import 'package:markaz_elamal/core/utils/app_colors.dart';
 import 'package:markaz_elamal/core/utils/app_strings.dart';
 import 'package:markaz_elamal/core/utils/app_text_styles.dart';
-import 'package:markaz_elamal/features/profile/profile_details_and_edit/presentation/edit_profile_cubit/edit_profile_cubit.dart';
-import 'package:markaz_elamal/features/profile/profile_details_and_edit/presentation/edit_profile_cubit/edit_profile_state.dart';
-import 'package:markaz_elamal/features/profile/profile_details_and_edit/presentation/widgets/profile_edit_textfield.dart';
+import 'package:markaz_elamal/features/profile/presentation/cubits/edit_profile_cubit/edit_profile_cubit.dart';
+import 'package:markaz_elamal/features/profile/presentation/cubits/edit_profile_cubit/edit_profile_state.dart';
+import 'package:markaz_elamal/features/profile/components/profile_edit_textfield.dart';
 
 class ProfileEdit extends StatelessWidget {
   const ProfileEdit({super.key});
