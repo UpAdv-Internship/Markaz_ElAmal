@@ -15,6 +15,7 @@ import 'package:markaz_elamal/features/splash/presentation/screens/splash.dart';
 
 
 import '../../features/category/screens/category_screen.dart';
+import '../../features/profile/screens/profile_screen.dart';
 
 
 class Routes {
@@ -32,6 +33,7 @@ class Routes {
   static const String doctorsCategory = '/doctorsCategory';
   static const String profileDetails = '/profileDetails';
   static const String profileEdit = '/profileEdit';
+  static const String profileScreen = '/profileScreen';
 }
 
 class AppRoutes {
@@ -60,7 +62,9 @@ class AppRoutes {
       case Routes.bookScreen:
         return MaterialPageRoute(builder: (_) => const BookScreen());
       case Routes.doctorsCategory:
-              return MaterialPageRoute(builder: (_) => const DoctorsCategory());
+        return MaterialPageRoute(builder: (_) => const DoctorsCategory());
+      case Routes.profileScreen:
+        return MaterialPageRoute(builder: (_) => const ProfileScreen());
       case Routes.profileDetails:
               return MaterialPageRoute(builder: (_) => const ProfileDetails());
       case Routes.profileEdit:

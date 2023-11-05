@@ -19,5 +19,12 @@ class AppAssets{
   static const String saraSmall = '${basePath}sara1.png';
   static const String masterCard = '${basePath}master_card.png';
   static const String visa = '${basePath}visa.png';
+  static const String profile = '${basePath}profile.png';
+  static const String history = '${basePath}history.png';
+  static const String profileDetailes = '${basePath}profileDetailes.png';
+  static const String chat = '${basePath}chat.png';
+  static const String setting = '${basePath}settings.png';
+  static const String help = '${basePath}help.png';
+  static const String logout = '${basePath}logout.png';
 
 }
