@@ -87,5 +87,8 @@ flutter:
     - family: Peralta
       fonts:
         - asset: assets/fonts/Peralta-Regular.ttf
+    - family: OleoScriptSwashCaps
+      fonts:
+        - asset: assets/fonts/OleoScriptSwashCaps-Bold.ttf
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

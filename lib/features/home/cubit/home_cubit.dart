@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:markaz_elamal/features/booking/presentation/screens/book_screen.dart';
 import 'package:markaz_elamal/features/category/screens/category_screen.dart';
 import 'package:markaz_elamal/features/home/presentation/screens/home.dart';
-import 'package:markaz_elamal/features/profile/screens/profile_screen.dart';
+import 'package:markaz_elamal/features/profile/presentation/screens/profile_screen.dart';
 import 'home_state.dart';
 
 class HomeCubit extends Cubit<HomeState> {
