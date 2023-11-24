@@ -26,5 +26,7 @@ class AppAssets{
   static const String setting = '${basePath}settings.png';
   static const String help = '${basePath}help.png';
   static const String logout = '${basePath}logout.png';
+  static const String trash = '${basePath}trash-2.png';
+  static const String osama = '${basePath}osama1.png';
 
 }
