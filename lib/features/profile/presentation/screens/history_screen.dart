@@ -36,7 +36,7 @@ class HistoryScreen extends StatelessWidget {
                   imageOfDoc: Image.asset(AppAssets.osama),
                   docName: 'Dr.Osama Ali',
                   day: '9 MAR',
-                  time: '11 AM'
+                  time: '11:00 AM'
               ),
               SizedBox(
                 height: 20.h,
