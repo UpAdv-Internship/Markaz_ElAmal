@@ -19,7 +19,7 @@ class HistoryContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 137.h,
+        height: 170.h,
         width: 388.w,
         decoration: BoxDecoration(
           color: AppColors.secondary,
@@ -29,7 +29,7 @@ class HistoryContainer extends StatelessWidget {
         Row(
           children: [
             Container(
-              height: 137.h,
+              height: 170.h,
               width: 319.w,
               decoration:  BoxDecoration(
                 borderRadius: BorderRadius.circular(16),
@@ -41,7 +41,7 @@ class HistoryContainer extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: SizedBox(
-                      height: 128.h,
+                      height: 160.h,
                       width: 114.w,
                       child: imageOfDoc,
                     ),
