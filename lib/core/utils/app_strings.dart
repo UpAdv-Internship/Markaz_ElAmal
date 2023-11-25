@@ -65,7 +65,7 @@ class AppStrings {
   static const String availableDoctor = "availableDoctor";
   //! Profile
   static const String history = "history";
-  static const String historyDetails = "historyDetails";
+  static const String historyDetails = "History Details";
   static const String profileDetailes = "profileDetailes";
   static const String settings = "settings";
   static const String help = "help";

@@ -6,7 +6,8 @@ import 'package:markaz_elamal/features/authentication/sign_in/presentation/sign_
 import 'package:markaz_elamal/features/authentication/sign_up/presentation/cubit/sign_up_cubit.dart';
 import 'package:markaz_elamal/features/booking/presentation/booking_cubit/booking_cubit.dart';
 import 'package:markaz_elamal/features/home/cubit/home_cubit.dart';
-import 'package:markaz_elamal/features/profile/profile_details_and_edit/presentation/edit_profile_cubit/edit_profile_cubit.dart';
+import 'package:markaz_elamal/features/profile/presentation/cubits/edit_profile_cubit/edit_profile_cubit.dart';
+import 'package:markaz_elamal/features/profile/presentation/cubits/profile_cubit/profile_cubit.dart';
 
 final sl = GetIt.instance;
 
@@ -21,4 +22,5 @@ void initServiceLocator() {
   sl.registerLazySingleton(() => SignUpCubit());
   sl.registerLazySingleton(() => ForgotPasswordCubit());
   sl.registerLazySingleton(() => EditProfileCubit());
+  sl.registerLazySingleton(() => ProfileCubit());
 }

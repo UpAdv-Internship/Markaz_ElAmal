@@ -251,7 +251,7 @@ class DoctorProfile extends StatelessWidget {
                               //! Book Button
                               CustomElevatedButton(
                                 onPressed: () {
-                                  navigate(
+                                  navigateReplacment(
                                       context: context,
                                       route: Routes.paymentOption);
                                 },

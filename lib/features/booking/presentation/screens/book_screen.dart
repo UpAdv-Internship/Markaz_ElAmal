@@ -68,8 +68,8 @@ class BookScreen extends StatelessWidget {
                     separatorPadding: 10,
                   ),
                   showTimelineHeader: false,
-                  lastDate: DateTime(DateTime.now().year, DateTime.now().month,
-                      DateTime.now().day + 30),
+                  lastDate: DateTime(DateTime.now().year,
+                      DateTime.now().month, DateTime.now().day + 30),
                   dayProps: EasyDayProps(
                     width: 60.w,
                     height: 160.h,

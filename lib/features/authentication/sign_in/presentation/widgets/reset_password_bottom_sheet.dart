@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:markaz_elamal/core/locale/app_locale.dart';
 import 'package:markaz_elamal/core/utils/app_colors.dart';
@@ -22,12 +23,11 @@ showResetPasswordBottomSheet(context) {
         listener: (context, state) {},
         builder: (context, state) {
           return SizedBox(
-            height: MediaQuery.of(context).size.height * 0.8,
+            height: 760.h,
             width: MediaQuery.of(context).size.width,
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 26.w),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              child: ListView(
                 children: [
                   SizedBox(height: 47.h),
                   Text(AppStrings.resetPassword.tr(context),
@@ -39,10 +39,35 @@ showResetPasswordBottomSheet(context) {
                   ),
                   SizedBox(height: 30.h),
                   Text(
-                    AppStrings.enterNewPassword.tr(context),
-                    style: CustomTextStyle.poppins600secondary24,
+                    AppStrings.enterTheFiveDigitsCode.tr(context),
+                    style: CustomTextStyle.poppins600secondary20,
                   ),
-                  SizedBox(height: 14.h),
+                  SizedBox(height: 10.h),
+                  //!OTP
+                  OtpTextField(
+                    numberOfFields: 5,
+                    showFieldAsBox: true,
+                    borderColor: AppColors.primary,
+                    fillColor: AppColors.primary,
+                    cursorColor: AppColors.white,
+                    enabledBorderColor: AppColors.primary,
+                    focusedBorderColor: AppColors.primary,
+                    disabledBorderColor: AppColors.primary,
+                    textStyle: CustomTextStyle.poppins400White16,
+                    fieldWidth: 50.w,
+                    borderRadius: BorderRadius.circular(100),
+                    filled: true,
+                    onCodeChanged: (String code) {},
+
+                    onSubmit: (String verificationCode) {}, // end onSubmit
+                  ),
+                  SizedBox(height: 30.h),
+
+                  Text(
+                    AppStrings.enterNewPassword.tr(context),
+                    style: CustomTextStyle.poppins600secondary20,
+                  ),
+                  SizedBox(height: 10.h),
                   //!Password Text Filed
                   CustomFormTextFiled(
                     obscureText: context
@@ -84,9 +109,9 @@ showResetPasswordBottomSheet(context) {
                   SizedBox(height: 30.h),
                   Text(
                     AppStrings.confirmNewPassword.tr(context),
-                    style: CustomTextStyle.poppins600secondary24,
+                    style: CustomTextStyle.poppins600secondary20,
                   ),
-                  SizedBox(height: 14.h),
+                  SizedBox(height: 10.h),
                   CustomFormTextFiled(
                     obscureText: context
                         .read<ForgotPasswordCubit>()
@@ -123,16 +148,20 @@ showResetPasswordBottomSheet(context) {
                       },
                     ),
                   ),
+                  //!resetPassword
                   SizedBox(height: 45.h),
                   CustomAuthenticationBtn(
                     text: AppStrings.resetPassword.tr(context),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
                     width: MediaQuery.of(context).size.width,
                     height: 60.h,
-                    backgroundColor: AppColors.secondary,
+                    backgroundColor: AppColors.primary,
                     textColor: AppColors.secondary,
                     textStyle: CustomTextStyle.poppins600White24,
                   ),
+                  SizedBox(height: 10.h),
                 ],
               ),
             ),

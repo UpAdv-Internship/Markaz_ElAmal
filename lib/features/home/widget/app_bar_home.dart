@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:markaz_elamal/core/common/common.dart';
 import 'package:markaz_elamal/core/locale/app_locale.dart';
+import 'package:markaz_elamal/core/router/app_router.dart';
 import 'package:markaz_elamal/core/utils/app_assets.dart';
 import 'package:markaz_elamal/core/utils/app_colors.dart';
 import 'package:markaz_elamal/core/utils/app_strings.dart';
@@ -33,11 +35,14 @@ class AppBarHome extends StatelessWidget {
           ),
           const Spacer(),
           InkWellIconButton(
-              height: 40.h,
-              width: 40.w,
-              icon: const Icon(Icons.notifications_outlined,
-                  color: AppColors.white),
-              onTap: () {}),
+            height: 40.h,
+            width: 40.w,
+            icon: const Icon(Icons.notifications_outlined,
+                color: AppColors.white),
+            onTap: () {
+              navigate(context: context, route: Routes.noteficationScreen);
+            },
+          ),
           SizedBox(
             width: 15.w,
           ),

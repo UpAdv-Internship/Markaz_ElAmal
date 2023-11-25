@@ -6,7 +6,7 @@ import 'package:markaz_elamal/core/router/app_router.dart';
 import 'package:markaz_elamal/core/utils/app_colors.dart';
 import 'package:markaz_elamal/core/utils/app_strings.dart';
 import 'package:markaz_elamal/core/utils/app_text_styles.dart';
-import 'package:markaz_elamal/features/profile/profile_details_and_edit/presentation/widgets/profile_details_component.dart';
+import 'package:markaz_elamal/features/profile/components/profile_details_component.dart';
 
 class ProfileDetails extends StatelessWidget {
   const ProfileDetails({super.key});
@@ -20,7 +20,9 @@ class ProfileDetails extends StatelessWidget {
         titleTextStyle: CustomTextStyle.poppins600White24,
         centerTitle: true,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: const Icon(Icons.arrow_back_ios_new_outlined),
         ),
         actions: [
