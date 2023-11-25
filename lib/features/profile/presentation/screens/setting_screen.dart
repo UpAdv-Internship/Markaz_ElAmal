@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:markaz_elamal/core/common/common.dart';
 import 'package:markaz_elamal/core/locale/app_locale.dart';
+import 'package:markaz_elamal/core/router/app_router.dart';
 import 'package:markaz_elamal/core/utils/app_colors.dart';
 import 'package:markaz_elamal/core/utils/app_strings.dart';
 import 'package:markaz_elamal/core/utils/app_text_styles.dart';
@@ -16,7 +18,9 @@ class SettingScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-            onPressed: () {}, icon: const Icon(Icons.arrow_back_ios_new)),
+            onPressed: () {
+      navigateReplacment(context: context, route: Routes.profileScreen);
+            }, icon: const Icon(Icons.arrow_back_ios_new)),
         centerTitle: true,
         title: Text(AppStrings.settings.tr(context)),
         actions:  [
