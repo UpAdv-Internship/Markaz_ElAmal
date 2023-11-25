@@ -7,6 +7,7 @@ import 'package:markaz_elamal/features/booking/presentation/screens/payment_opti
 import 'package:markaz_elamal/features/home/presentation/screens/bottom_bar.dart';
 import 'package:markaz_elamal/features/home/presentation/screens/home.dart';
 import 'package:markaz_elamal/features/category/screens/doctors_category.dart';
+import 'package:markaz_elamal/features/home/presentation/screens/notefication_screen.dart';
 import 'package:markaz_elamal/features/profile/presentation/screens/profile_details.dart';
 import 'package:markaz_elamal/features/profile/presentation/screens/profile_edit.dart';
 import 'package:markaz_elamal/features/splash/presentation/screens/on_boarding_screen.dart';
@@ -35,6 +36,7 @@ class Routes {
   static const String profileDetails = '/profileDetails';
   static const String profileEdit = '/profileEdit';
   static const String profileScreen = '/profileScreen';
+  static const String noteficationScreen = '/noteficationScreen';
   static const String historyScreen = '/HistoryScreen';
 }
 
@@ -71,6 +73,8 @@ class AppRoutes {
               return MaterialPageRoute(builder: (_) => const ProfileDetails());
       case Routes.profileEdit:
               return MaterialPageRoute(builder: (_) => const ProfileEdit());
+      case Routes.noteficationScreen:
+              return MaterialPageRoute(builder: (_) => const NoteficationScreen());
       case Routes.historyScreen:
         return MaterialPageRoute(builder: (_) => const HistoryScreen());
 
