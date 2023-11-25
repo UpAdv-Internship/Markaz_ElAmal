@@ -7,6 +7,7 @@ import 'package:markaz_elamal/core/router/app_router.dart';
 import 'package:markaz_elamal/core/utils/app_colors.dart';
 import 'package:markaz_elamal/core/utils/app_strings.dart';
 import 'package:markaz_elamal/core/utils/app_text_styles.dart';
+import 'package:markaz_elamal/features/profile/components/rating_alert_dialog.dart';
 import 'package:markaz_elamal/features/profile/widget/custom_circle_avatar_setting.dart';
 import 'package:markaz_elamal/features/profile/widget/custom_list_tile.dart';
 
@@ -19,17 +20,19 @@ class SettingScreen extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
             onPressed: () {
-      navigateReplacment(context: context, route: Routes.profileScreen);
-            }, icon: const Icon(Icons.arrow_back_ios_new)),
+              navigateReplacment(context: context, route: Routes.profileScreen);
+            },
+            icon: const Icon(Icons.arrow_back_ios_new)),
         centerTitle: true,
         title: Text(AppStrings.settings.tr(context)),
-        actions:  [
+        actions: [
           Padding(
-              padding: EdgeInsets.only(right: 10.h), child: const Icon(Icons.settings))
+              padding: EdgeInsets.only(right: 10.h),
+              child: const Icon(Icons.settings))
         ],
       ),
       body: Padding(
-padding:  EdgeInsets.only(bottom: 0,left: 22.h,right: 22.h,top: 22.h),
+        padding: EdgeInsets.only(bottom: 0, left: 22.h, right: 22.h, top: 22.h),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -72,7 +75,7 @@ padding:  EdgeInsets.only(bottom: 0,left: 22.h,right: 22.h,top: 22.h),
                 leading: const CircleAvatarSetting(
                     color: AppColors.privacy,
                     icon: Icon(
-FontAwesomeIcons.circleCheck,
+                      FontAwesomeIcons.circleCheck,
                       color: AppColors.white,
                     )),
                 title: Text(
@@ -100,7 +103,8 @@ FontAwesomeIcons.circleCheck,
                 title: Text(
                   AppStrings.changePassword.tr(context),
                 ),
-                subtitle: Text(AppStrings.changeYourCurrentPassword.tr(context)),
+                subtitle:
+                    Text(AppStrings.changeYourCurrentPassword.tr(context)),
                 trailing: IconButton(
                     onPressed: () {},
                     icon: const Icon(
@@ -111,12 +115,14 @@ FontAwesomeIcons.circleCheck,
               SizedBox(
                 height: 55.h,
               ),
-            const Divider(color: AppColors.secondary,),
-            SizedBox(
+              const Divider(
+                color: AppColors.secondary,
+              ),
+              SizedBox(
                 height: 37.h,
               ),
-            //! general text
-             Text(
+              //! general text
+              Text(
                 AppStrings.general.tr(context),
                 style: CustomTextStyle.poppins700secondry20,
               ),
@@ -128,7 +134,7 @@ FontAwesomeIcons.circleCheck,
                 leading: const CircleAvatarSetting(
                     color: AppColors.rateApp,
                     icon: Icon(
-      FontAwesomeIcons.heart,
+                      FontAwesomeIcons.heart,
                       color: AppColors.white,
                     )),
                 title: Text(
@@ -136,7 +142,12 @@ FontAwesomeIcons.circleCheck,
                 ),
                 subtitle: Text(AppStrings.rateAndReviewUs.tr(context)),
                 trailing: IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      showDialog(
+                        context: context,
+                        builder: (context) => const RatingAlertDialog(),
+                      );
+                    },
                     icon: const Icon(
                       Icons.arrow_forward_ios_rounded,
                       color: AppColors.secondary,
@@ -150,7 +161,7 @@ FontAwesomeIcons.circleCheck,
                 leading: const CircleAvatarSetting(
                     color: AppColors.feedback,
                     icon: Icon(
-Icons.email_outlined,
+                      Icons.email_outlined,
                       color: AppColors.white,
                     )),
                 title: Text(
@@ -164,8 +175,10 @@ Icons.email_outlined,
                       color: AppColors.secondary,
                     )),
               ),
-        
-         SizedBox(height: 30.h,),
+
+              SizedBox(
+                height: 30.h,
+              ),
             ],
           ),
         ),
