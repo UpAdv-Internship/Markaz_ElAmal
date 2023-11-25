@@ -38,8 +38,7 @@ class ForgetPasswordBottomSheet extends StatelessWidget {
                   width: MediaQuery.of(context).size.width,
                   child: Padding(
                     padding: EdgeInsets.symmetric(horizontal: 26.w),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                    child: ListView(
                       children: [
                         SizedBox(height: 47.h),
                         Text(AppStrings.forgetPassword.tr(context),
@@ -74,7 +73,7 @@ class ForgetPasswordBottomSheet extends StatelessWidget {
                           },
                           width: MediaQuery.of(context).size.width,
                           height: 60.h,
-                          backgroundColor: AppColors.secondary,
+                          backgroundColor: AppColors.primary,
                           textColor: AppColors.secondary,
                           textStyle: CustomTextStyle.poppins600White24,
                         ),
