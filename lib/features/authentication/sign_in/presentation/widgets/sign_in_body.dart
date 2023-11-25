@@ -15,7 +15,7 @@ class SignInBody extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         CustomTitleHeader(text: AppStrings.letsStartWithSignIn.tr(context)),
-        SizedBox(height: 212.h),
+        SizedBox(height: 250.h),
         const CustomFormBanner(),
       ],
     );
