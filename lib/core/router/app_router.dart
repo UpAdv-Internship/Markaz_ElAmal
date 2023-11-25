@@ -4,6 +4,8 @@ import 'package:markaz_elamal/features/authentication/sign_up/presentation/scree
 import 'package:markaz_elamal/features/booking/presentation/screens/book_screen.dart';
 import 'package:markaz_elamal/features/booking/presentation/screens/booking_congratulations_screen.dart';
 import 'package:markaz_elamal/features/booking/presentation/screens/payment_option.dart';
+import 'package:markaz_elamal/features/chat/presentation/screens/chat_screen.dart';
+import 'package:markaz_elamal/features/chat/presentation/screens/chats_screen.dart';
 import 'package:markaz_elamal/features/home/presentation/screens/bottom_bar.dart';
 import 'package:markaz_elamal/features/home/presentation/screens/home.dart';
 import 'package:markaz_elamal/features/category/screens/doctors_category.dart';
@@ -15,11 +17,9 @@ import 'package:markaz_elamal/features/splash/presentation/screens/on_boarding_s
 import 'package:markaz_elamal/features/booking/presentation/screens/doctor_profile.dart';
 import 'package:markaz_elamal/features/splash/presentation/screens/splash.dart';
 
-
 import '../../features/category/screens/category_screen.dart';
 import '../../features/profile/presentation/screens/history_screen.dart';
 import '../../features/profile/presentation/screens/profile_screen.dart';
-
 
 class Routes {
   static const String initialRoute = '/';
@@ -40,6 +40,8 @@ class Routes {
   static const String settingScreen = '/SettingScreen';
   static const String noteficationScreen = '/noteficationScreen';
   static const String historyScreen = '/HistoryScreen';
+  static const String chatScreen = '/chatScreen';
+  static const String chatsScreen = '/chatsScreen';
 }
 
 class AppRoutes {
@@ -66,7 +68,8 @@ class AppRoutes {
       case Routes.settingScreen:
         return MaterialPageRoute(builder: (_) => const SettingScreen());
       case Routes.bookingCongratulations:
-        return MaterialPageRoute(builder: (_) => const BookingCongratulations());
+        return MaterialPageRoute(
+            builder: (_) => const BookingCongratulations());
       case Routes.bookScreen:
         return MaterialPageRoute(builder: (_) => const BookScreen());
       case Routes.doctorsCategory:
@@ -74,13 +77,18 @@ class AppRoutes {
       case Routes.profileScreen:
         return MaterialPageRoute(builder: (_) => const ProfileScreen());
       case Routes.profileDetails:
-              return MaterialPageRoute(builder: (_) => const ProfileDetails());
+        return MaterialPageRoute(builder: (_) => const ProfileDetails());
       case Routes.profileEdit:
-              return MaterialPageRoute(builder: (_) => const ProfileEdit());
+        return MaterialPageRoute(builder: (_) => const ProfileEdit());
+              
       case Routes.noteficationScreen:
               return MaterialPageRoute(builder: (_) => const NoteficationScreen());
       case Routes.historyScreen:
         return MaterialPageRoute(builder: (_) => const HistoryScreen());
+      case Routes.chatScreen:
+        return MaterialPageRoute(builder: (_) => const ChatScreen());
+      case Routes.chatsScreen:
+        return MaterialPageRoute(builder: (_) => const ChatsScreen());
 
       default:
         return MaterialPageRoute(
