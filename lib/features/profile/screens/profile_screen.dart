@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:markaz_elamal/core/common/common.dart';
 import 'package:markaz_elamal/core/locale/app_locale.dart';
+import 'package:markaz_elamal/core/router/app_router.dart';
 import 'package:markaz_elamal/core/utils/app_colors.dart';
 import 'package:markaz_elamal/core/utils/app_text_styles.dart';
 
@@ -78,7 +80,9 @@ class ProfileScreen extends StatelessWidget {
                 ListTileProfile(
                   desc: AppStrings.settings.tr(context),
                   image: Image.asset(AppAssets.setting),
-                  onTap: (){},
+                  onTap: (){
+                    navigate(context: context, route: Routes.sttingScreen);
+                  },
                 ),
                 SizedBox(
                   height: 10.h,

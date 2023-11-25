@@ -9,6 +9,7 @@ import 'package:markaz_elamal/features/home/presentation/screens/home.dart';
 import 'package:markaz_elamal/features/category/screens/doctors_category.dart';
 import 'package:markaz_elamal/features/profile/profile_details_and_edit/presentation/screens/profile_details.dart';
 import 'package:markaz_elamal/features/profile/profile_details_and_edit/presentation/screens/profile_edit.dart';
+import 'package:markaz_elamal/features/profile/screens/setting_screen.dart';
 import 'package:markaz_elamal/features/splash/presentation/screens/on_boarding_screen.dart';
 import 'package:markaz_elamal/features/booking/presentation/screens/doctor_profile.dart';
 import 'package:markaz_elamal/features/splash/presentation/screens/splash.dart';
@@ -34,6 +35,7 @@ class Routes {
   static const String profileDetails = '/profileDetails';
   static const String profileEdit = '/profileEdit';
   static const String profileScreen = '/profileScreen';
+  static const String sttingScreen = '/sttingScreen';
 }
 
 class AppRoutes {
@@ -57,6 +59,8 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => const CategoryScreen());
       case Routes.paymentOption:
         return MaterialPageRoute(builder: (_) => const PaymentOption());
+      case Routes.sttingScreen:
+        return MaterialPageRoute(builder: (_) => const SettingScreen());
       case Routes.bookingCongratulations:
         return MaterialPageRoute(builder: (_) => const BookingCongratulations());
       case Routes.bookScreen:
