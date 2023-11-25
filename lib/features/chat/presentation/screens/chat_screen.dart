@@ -35,6 +35,7 @@ class ChatScreen extends StatelessWidget {
               child: TextFormField(
                 controller: controller,
                 decoration: InputDecoration(
+                    prefixIcon: const Icon(Icons.emoji_emotions_outlined),
                     hintText: AppStrings.typeMessage.tr(context),
                     hintStyle: CustomTextStyle.poppins400secondary16,
                     suffixIcon: const Icon(
