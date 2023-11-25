@@ -10,6 +10,7 @@ import 'package:markaz_elamal/core/utils/app_text_styles.dart';
 import 'package:markaz_elamal/features/profile/components/rating_alert_dialog.dart';
 import 'package:markaz_elamal/features/profile/widget/custom_circle_avatar_setting.dart';
 import 'package:markaz_elamal/features/profile/widget/custom_list_tile.dart';
+import 'package:markaz_elamal/features/profile/widget/setting_change_password_text_feild.dart';
 
 class SettingScreen extends StatelessWidget {
   const SettingScreen({super.key});
@@ -83,7 +84,9 @@ class SettingScreen extends StatelessWidget {
                 ),
                 subtitle: Text(AppStrings.controlYourPrivacy.tr(context)),
                 trailing: IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      navigate(context: context, route: Routes.privacyScreen);
+                    },
                     icon: const Icon(
                       Icons.arrow_forward_ios_rounded,
                       color: AppColors.secondary,
@@ -94,6 +97,59 @@ class SettingScreen extends StatelessWidget {
               ),
               //! change password
               CustomListTileSetting(
+                onTap: () {
+                  showBottomSheet(
+                    
+                    context: context,
+                    shape: RoundedRectangleBorder(
+                      side: const BorderSide(
+                          color: AppColors.secondary, width: 2),
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(30.r),
+                          topRight: Radius.circular(30.r)),
+                    ),
+                    builder: (context) {
+                      return SizedBox(
+                        width: 428.w,
+                        height: 620.h,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 22, vertical: 35),
+                          child: SingleChildScrollView(
+                            child: Column(
+                              // mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  AppStrings.changePassword.tr(context),
+                                  style: CustomTextStyle.poppins600secondary32,
+                                ),
+                                SizedBox(
+                                  height: 48.h,
+                                ),
+                                SettingChangePasswordTextField(
+                                  labelText: AppStrings.enterCurrentPassword,
+                                  hintText: AppStrings.enterCurrentPassword,
+                                  controller: TextEditingController(),
+                                  prefixIcon: const Icon(Icons.lock),
+                                  suffixIcon: const Icon(Icons.remove_red_eye),
+                                  validator: (value) {
+                            if (value!.isEmpty) {
+                              return AppStrings.pleaseEnterValidName
+                                  .tr(context);
+                            }
+                            return null;
+                          },
+                                ),
+                                
+                              ],
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  );
+                },
                 leading: const CircleAvatarSetting(
                     color: AppColors.changePass,
                     icon: Icon(

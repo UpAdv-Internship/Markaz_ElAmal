@@ -9,12 +9,13 @@ class CustomListTileSetting extends StatelessWidget {
     this.leading,
     this.title,
     this.subtitle,
-    this.trailing,
+    this.trailing, this.onTap,
   });
   final Widget? leading;
   final Widget? title;
   final Widget? subtitle;
   final Widget? trailing;
+  final  Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +27,7 @@ class CustomListTileSetting extends StatelessWidget {
           border: Border.all(color: AppColors.secondary),
           borderRadius: BorderRadius.circular(14)),
       child: ListTile(
+        onTap: onTap,
           leading: leading,
           title: title,
           titleTextStyle: CustomTextStyle.poppins700secondry15,

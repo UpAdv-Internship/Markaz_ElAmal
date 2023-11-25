@@ -10,6 +10,7 @@ import 'package:markaz_elamal/features/home/presentation/screens/bottom_bar.dart
 import 'package:markaz_elamal/features/home/presentation/screens/home.dart';
 import 'package:markaz_elamal/features/category/screens/doctors_category.dart';
 import 'package:markaz_elamal/features/home/presentation/screens/notefication_screen.dart';
+import 'package:markaz_elamal/features/profile/presentation/screens/privacy_screen.dart';
 import 'package:markaz_elamal/features/profile/presentation/screens/profile_details.dart';
 import 'package:markaz_elamal/features/profile/presentation/screens/profile_edit.dart';
 import 'package:markaz_elamal/features/profile/presentation/screens/setting_screen.dart';
@@ -42,6 +43,7 @@ class Routes {
   static const String historyScreen = '/HistoryScreen';
   static const String chatScreen = '/chatScreen';
   static const String chatsScreen = '/chatsScreen';
+  static const String privacyScreen = '/PrivacyScreen';
 }
 
 class AppRoutes {
@@ -51,6 +53,8 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => const SplashScreen());
       case Routes.onBoarding:
         return MaterialPageRoute(builder: (_) => const OnBoardingScreen());
+      case Routes.privacyScreen:
+        return MaterialPageRoute(builder: (_) => const PrivacyScreen());
       case Routes.signIn:
         return MaterialPageRoute(builder: (_) => const SignInScreen());
       case Routes.botthomNavv:
