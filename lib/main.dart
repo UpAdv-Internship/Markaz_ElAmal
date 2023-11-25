@@ -11,6 +11,7 @@ import 'package:markaz_elamal/features/booking/presentation/booking_cubit/bookin
 import 'package:markaz_elamal/features/home/cubit/home_cubit.dart';
 import 'package:markaz_elamal/features/profile/presentation/cubits/edit_profile_cubit/edit_profile_cubit.dart';
 import 'package:markaz_elamal/features/profile/presentation/cubits/profile_cubit/profile_cubit.dart';
+import 'package:markaz_elamal/features/profile/presentation/cubits/settings_cubit/cubit/settings_cubit.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,6 +29,7 @@ void main() async {
         BlocProvider(create: (context) => sl<ForgotPasswordCubit>()),
         BlocProvider(create: (context) => sl<EditProfileCubit>()),
         BlocProvider(create: (context) => sl<ProfileCubit>()),
+        BlocProvider(create: (context) => sl<SettingsCubit>()),
       ],
       child: const MarkazElamal(),
     ),

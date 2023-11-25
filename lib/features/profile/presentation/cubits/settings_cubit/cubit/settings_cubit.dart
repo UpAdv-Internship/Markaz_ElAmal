@@ -1,0 +1,33 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:markaz_elamal/features/profile/presentation/cubits/settings_cubit/cubit/settings_state.dart';
+
+class SettingsCubit extends Cubit<SettingsState> {
+  SettingsCubit() : super(SettingsInitial());
+
+  //! Rating Alert
+  TextEditingController rateCommentController = TextEditingController();
+  //* Rating Stars
+  int rating = 1;
+  void changeRating(index) {
+    switch (index) {
+      case 1:
+        rating = 1;
+      case 2:
+        rating = 2;
+      case 3:
+        rating = 3;
+      case 4:
+        rating = 4;
+      case 5:
+        rating = 5;
+        break;
+      default:
+    }
+    emit(RateChangeState());
+  }
+
+  void clearControllers() {
+    rateCommentController.clear();
+  }
+}
