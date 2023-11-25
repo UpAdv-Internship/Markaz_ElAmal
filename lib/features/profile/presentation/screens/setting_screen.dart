@@ -9,6 +9,7 @@ import 'package:markaz_elamal/core/utils/app_strings.dart';
 import 'package:markaz_elamal/core/utils/app_text_styles.dart';
 import 'package:markaz_elamal/features/profile/widget/custom_circle_avatar_setting.dart';
 import 'package:markaz_elamal/features/profile/widget/custom_list_tile.dart';
+import 'package:markaz_elamal/features/profile/widget/setting_change_password_text_feild.dart';
 
 class SettingScreen extends StatelessWidget {
   const SettingScreen({super.key});
@@ -19,17 +20,19 @@ class SettingScreen extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
             onPressed: () {
-      navigateReplacment(context: context, route: Routes.profileScreen);
-            }, icon: const Icon(Icons.arrow_back_ios_new)),
+              navigateReplacment(context: context, route: Routes.profileScreen);
+            },
+            icon: const Icon(Icons.arrow_back_ios_new)),
         centerTitle: true,
         title: Text(AppStrings.settings.tr(context)),
-        actions:  [
+        actions: [
           Padding(
-              padding: EdgeInsets.only(right: 10.h), child: const Icon(Icons.settings))
+              padding: EdgeInsets.only(right: 10.h),
+              child: const Icon(Icons.settings))
         ],
       ),
       body: Padding(
-padding:  EdgeInsets.only(bottom: 0,left: 22.h,right: 22.h,top: 22.h),
+        padding: EdgeInsets.only(bottom: 0, left: 22.h, right: 22.h, top: 22.h),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -72,7 +75,7 @@ padding:  EdgeInsets.only(bottom: 0,left: 22.h,right: 22.h,top: 22.h),
                 leading: const CircleAvatarSetting(
                     color: AppColors.privacy,
                     icon: Icon(
-FontAwesomeIcons.circleCheck,
+                      FontAwesomeIcons.circleCheck,
                       color: AppColors.white,
                     )),
                 title: Text(
@@ -94,23 +97,59 @@ FontAwesomeIcons.circleCheck,
               //! change password
               CustomListTileSetting(
                 onTap: () {
-                  showBottomSheet(context: context,
-                   shape: RoundedRectangleBorder(
-                  side: const BorderSide(color: AppColors.secondary, width: 2),
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(30.r),
-                      topRight: Radius.circular(30.r))),
-                  
-                   builder: (context) {
-                    return Container(
-                      color: AppColors.white,
-                      width: 200.w,
-                      height: 200.h,
-                    );
-                  },);
+                  showBottomSheet(
+                    
+                    context: context,
+                    shape: RoundedRectangleBorder(
+                      side: const BorderSide(
+                          color: AppColors.secondary, width: 2),
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(30.r),
+                          topRight: Radius.circular(30.r)),
+                    ),
+                    builder: (context) {
+                      return SizedBox(
+                        width: 428.w,
+                        height: 620.h,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 22, vertical: 35),
+                          child: SingleChildScrollView(
+                            child: Column(
+                              // mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  AppStrings.changePassword.tr(context),
+                                  style: CustomTextStyle.poppins600secondary32,
+                                ),
+                                SizedBox(
+                                  height: 48.h,
+                                ),
+                                SettingChangePasswordTextField(
+                                  labelText: AppStrings.enterCurrentPassword,
+                                  hintText: AppStrings.enterCurrentPassword,
+                                  controller: TextEditingController(),
+                                  prefixIcon: const Icon(Icons.lock),
+                                  suffixIcon: const Icon(Icons.remove_red_eye),
+                                  validator: (value) {
+                            if (value!.isEmpty) {
+                              return AppStrings.pleaseEnterValidName
+                                  .tr(context);
+                            }
+                            return null;
+                          },
+                                ),
+                                
+                              ],
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  );
                 },
                 leading: const CircleAvatarSetting(
-                  
                     color: AppColors.changePass,
                     icon: Icon(
                       Icons.lock_outline_rounded,
@@ -119,7 +158,8 @@ FontAwesomeIcons.circleCheck,
                 title: Text(
                   AppStrings.changePassword.tr(context),
                 ),
-                subtitle: Text(AppStrings.changeYourCurrentPassword.tr(context)),
+                subtitle:
+                    Text(AppStrings.changeYourCurrentPassword.tr(context)),
                 trailing: IconButton(
                     onPressed: () {},
                     icon: const Icon(
@@ -130,12 +170,14 @@ FontAwesomeIcons.circleCheck,
               SizedBox(
                 height: 55.h,
               ),
-            const Divider(color: AppColors.secondary,),
-            SizedBox(
+              const Divider(
+                color: AppColors.secondary,
+              ),
+              SizedBox(
                 height: 37.h,
               ),
-            //! general text
-             Text(
+              //! general text
+              Text(
                 AppStrings.general.tr(context),
                 style: CustomTextStyle.poppins700secondry20,
               ),
@@ -147,7 +189,7 @@ FontAwesomeIcons.circleCheck,
                 leading: const CircleAvatarSetting(
                     color: AppColors.rateApp,
                     icon: Icon(
-      FontAwesomeIcons.heart,
+                      FontAwesomeIcons.heart,
                       color: AppColors.white,
                     )),
                 title: Text(
@@ -169,7 +211,7 @@ FontAwesomeIcons.circleCheck,
                 leading: const CircleAvatarSetting(
                     color: AppColors.feedback,
                     icon: Icon(
-Icons.email_outlined,
+                      Icons.email_outlined,
                       color: AppColors.white,
                     )),
                 title: Text(
@@ -183,8 +225,10 @@ Icons.email_outlined,
                       color: AppColors.secondary,
                     )),
               ),
-        
-         SizedBox(height: 30.h,),
+
+              SizedBox(
+                height: 30.h,
+              ),
             ],
           ),
         ),

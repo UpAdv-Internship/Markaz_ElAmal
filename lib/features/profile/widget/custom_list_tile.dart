@@ -15,7 +15,7 @@ class CustomListTileSetting extends StatelessWidget {
   final Widget? title;
   final Widget? subtitle;
   final Widget? trailing;
-  final void Function()? onTap;
+  final  Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
