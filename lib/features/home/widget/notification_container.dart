@@ -15,37 +15,44 @@ class NotificationContainer extends StatelessWidget {
   final String time;
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        //* Image
-        CircleAvatar(
-          radius: 30.r,
-          backgroundImage: AssetImage(image),
-          backgroundColor: AppColors.transparent,
-        ),
-        SizedBox(width: 6.w),
-        SizedBox(
-          width: 330.w,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                text,
-                style: CustomTextStyle.poppins500secondary14,
-                softWrap: true,
-              ),
-              SizedBox(height: 7.h),
-              Text(
-                time,
-                style: CustomTextStyle.poppins500secondary14.copyWith(
-                  fontSize: 13.sp,
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 16.w),
+      child: Center(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            //* Image
+            CircleAvatar(
+              radius: 30.r,
+              backgroundImage: AssetImage(image),
+              backgroundColor: AppColors.transparent,
+            ),
+            SizedBox(width: 6.w),
+            Expanded(
+              child: SizedBox(
+                width: double.maxFinite,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      text,
+                      style: CustomTextStyle.poppins500secondary14,
+                      softWrap: true,
+                    ),
+                    SizedBox(height: 7.h),
+                    Text(
+                      time,
+                      style: CustomTextStyle.poppins500secondary14.copyWith(
+                        fontSize: 13.sp,
+                      ),
+                    ),
+                  ],
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
-      ],
+      ),
     );
   }
 }
