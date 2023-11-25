@@ -80,7 +80,9 @@ FontAwesomeIcons.circleCheck,
                 ),
                 subtitle: Text(AppStrings.controlYourPrivacy.tr(context)),
                 trailing: IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      navigate(context: context, route: Routes.privacyScreen);
+                    },
                     icon: const Icon(
                       Icons.arrow_forward_ios_rounded,
                       color: AppColors.secondary,
@@ -91,7 +93,24 @@ FontAwesomeIcons.circleCheck,
               ),
               //! change password
               CustomListTileSetting(
+                onTap: () {
+                  showBottomSheet(context: context,
+                   shape: RoundedRectangleBorder(
+                  side: const BorderSide(color: AppColors.secondary, width: 2),
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(30.r),
+                      topRight: Radius.circular(30.r))),
+                  
+                   builder: (context) {
+                    return Container(
+                      color: AppColors.white,
+                      width: 200.w,
+                      height: 200.h,
+                    );
+                  },);
+                },
                 leading: const CircleAvatarSetting(
+                  
                     color: AppColors.changePass,
                     icon: Icon(
                       Icons.lock_outline_rounded,
