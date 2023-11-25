@@ -29,7 +29,7 @@ class SignUpForm extends StatelessWidget {
               children: [
                 Container(
                   width: 341.w,
-                  height: 700.h,
+                  height: 680.h,
                   decoration: BoxDecoration(
                       color: AppColors.primary,
                       border: Border(
@@ -47,7 +47,7 @@ class SignUpForm extends StatelessWidget {
                         children: [
                           //!Logo
                           const LogoWithTextWidget(),
-                          SizedBox(height: 16.h),
+                          SizedBox(height: 15.h),
 
                           //!Name
                           CustomFormTextFiled(
@@ -64,7 +64,7 @@ class SignUpForm extends StatelessWidget {
                             labelText: AppStrings.name.tr(context),
                             prefixIcon: Icon(Icons.person, size: 30.w),
                           ),
-                          SizedBox(height: 16.h),
+                          SizedBox(height: 15.h),
 
                           //!Phone Number
                           CustomFormTextFiled(
@@ -82,7 +82,7 @@ class SignUpForm extends StatelessWidget {
                             prefixIcon: Icon(Icons.phone, size: 30.w),
                           ),
 
-                          SizedBox(height: 16.h),
+                          SizedBox(height: 15.h),
 
                           //!Email
 
@@ -100,7 +100,7 @@ class SignUpForm extends StatelessWidget {
                             labelText: AppStrings.email.tr(context),
                             prefixIcon: Icon(Icons.email_outlined, size: 30.w),
                           ),
-                          SizedBox(height: 16.h),
+                          SizedBox(height: 15.h),
 
                           //!Password
                           CustomFormTextFiled(
@@ -136,7 +136,7 @@ class SignUpForm extends StatelessWidget {
                               },
                             ),
                           ),
-                          SizedBox(height: 16.h),
+                          SizedBox(height: 15.h),
 
                           //!Confirm Password
                           CustomFormTextFiled(
@@ -172,7 +172,7 @@ class SignUpForm extends StatelessWidget {
                               },
                             ),
                           ),
-                          SizedBox(height: 16.h),
+                          SizedBox(height: 15.h),
                           //! Sign Up Btn
                           CustomAuthenticationBtn(
                               text: AppStrings.signup.tr(context),
@@ -192,7 +192,7 @@ class SignUpForm extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 25.h),
+                SizedBox(height: 10.h),
 
                 //! Have Already An Account
                 Align(

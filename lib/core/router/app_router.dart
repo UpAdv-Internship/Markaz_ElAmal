@@ -16,6 +16,7 @@ import 'package:markaz_elamal/features/splash/presentation/screens/splash.dart';
 
 
 import '../../features/category/screens/category_screen.dart';
+import '../../features/profile/presentation/screens/history_screen.dart';
 import '../../features/profile/presentation/screens/profile_screen.dart';
 
 
@@ -36,6 +37,7 @@ class Routes {
   static const String profileEdit = '/profileEdit';
   static const String profileScreen = '/profileScreen';
   static const String noteficationScreen = '/noteficationScreen';
+  static const String historyScreen = '/HistoryScreen';
 }
 
 class AppRoutes {
@@ -73,6 +75,8 @@ class AppRoutes {
               return MaterialPageRoute(builder: (_) => const ProfileEdit());
       case Routes.noteficationScreen:
               return MaterialPageRoute(builder: (_) => const NoteficationScreen());
+      case Routes.historyScreen:
+        return MaterialPageRoute(builder: (_) => const HistoryScreen());
 
       default:
         return MaterialPageRoute(

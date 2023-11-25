@@ -60,7 +60,9 @@ class ProfileScreen extends StatelessWidget {
                 ListTileProfile(
                   desc: AppStrings.history.tr(context),
                   image: Image.asset(AppAssets.history),
-                  onTap: () {},
+                  onTap: () {
+                    navigate(context: context, route: Routes.historyScreen);
+                  },
                 ),
                 SizedBox(
                   height: 10.h,
