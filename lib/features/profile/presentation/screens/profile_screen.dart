@@ -92,7 +92,9 @@ class ProfileScreen extends StatelessWidget {
                 ListTileProfile(
                   desc: AppStrings.chats.tr(context),
                   image: Image.asset(AppAssets.chat),
-                  onTap: () {},
+                  onTap: () {
+                    navigate(context: context, route: Routes.chatsScreen);
+                  },
                 ),
                 SizedBox(
                   height: 10.h,
@@ -136,4 +138,3 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 }
-
