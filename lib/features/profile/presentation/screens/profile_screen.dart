@@ -21,14 +21,19 @@ class ProfileScreen extends StatelessWidget {
         body: Center(
           child: Padding(
             padding: const EdgeInsets.all(15.0),
-            child: Column(
+            child: ListView(
               children: [
                 SizedBox(
                   height: 15.h,
                 ),
-                Text(
-                  AppStrings.profile.tr(context),
-                  style: CustomTextStyle.poppins700secondary26,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      AppStrings.profile.tr(context),
+                      style: CustomTextStyle.poppins700secondary26,
+                    ),
+                  ],
                 ),
                 SizedBox(
                   height: 25.h,
@@ -47,9 +52,14 @@ class ProfileScreen extends StatelessWidget {
 
                 // Name
 
-                Text(
-                  'Name Here',
-                  style: CustomTextStyle.poppins600secondary24,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Name Here',
+                      style: CustomTextStyle.poppins600secondary24,
+                    ),
+                  ],
                 ),
                 SizedBox(
                   height: 35.h,
@@ -93,7 +103,9 @@ class ProfileScreen extends StatelessWidget {
                 ListTileProfile(
                   desc: AppStrings.settings.tr(context),
                   image: Image.asset(AppAssets.setting),
-                  onTap: () {},
+                  onTap: () {
+                    navigate(context: context, route: Routes.settingScreen);
+                  },
                 ),
                 SizedBox(
                   height: 10.h,
