@@ -120,7 +120,7 @@ class SignInForm extends StatelessWidget {
               textOne: AppStrings.dontHaveAnAccount.tr(context),
               textTwo: AppStrings.signup.tr(context),
               onTap: () {
-                navigateReplacment(context: context, route: Routes.signUp);
+                navigate(context: context, route: Routes.signUp);
               },
             ),
           ],
