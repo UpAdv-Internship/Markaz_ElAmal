@@ -241,7 +241,11 @@ class DoctorProfile extends StatelessWidget {
                             children: [
                               //! Send Message Button
                               CustomElevatedButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  navigate(
+                                      context: context,
+                                      route: Routes.chatScreen);
+                                },
                                 text: AppStrings.sendMessage.tr(context),
                                 backgroundColor: AppColors.lightGrey,
                                 textColor: AppColors.secondary,
