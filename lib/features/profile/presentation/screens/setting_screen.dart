@@ -7,6 +7,7 @@ import 'package:markaz_elamal/core/router/app_router.dart';
 import 'package:markaz_elamal/core/utils/app_colors.dart';
 import 'package:markaz_elamal/core/utils/app_strings.dart';
 import 'package:markaz_elamal/core/utils/app_text_styles.dart';
+import 'package:markaz_elamal/features/profile/components/rating_alert_dialog.dart';
 import 'package:markaz_elamal/features/profile/widget/custom_circle_avatar_setting.dart';
 import 'package:markaz_elamal/features/profile/widget/custom_list_tile.dart';
 import 'package:markaz_elamal/features/profile/widget/setting_change_password_text_feild.dart';
@@ -203,7 +204,12 @@ class SettingScreen extends StatelessWidget {
                 ),
                 subtitle: Text(AppStrings.rateAndReviewUs.tr(context)),
                 trailing: IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      showDialog(
+                        context: context,
+                        builder: (context) => const RatingAlertDialog(),
+                      );
+                    },
                     icon: const Icon(
                       Icons.arrow_forward_ios_rounded,
                       color: AppColors.secondary,
