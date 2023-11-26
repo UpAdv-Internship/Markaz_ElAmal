@@ -4,7 +4,40 @@ import 'package:markaz_elamal/features/profile/presentation/cubits/settings_cubi
 
 class SettingsCubit extends Cubit<SettingsState> {
   SettingsCubit() : super(SettingsInitial());
+TextEditingController currentPasswordController = TextEditingController();
+TextEditingController newPasswordController = TextEditingController();
+TextEditingController confitmNewPasswordController = TextEditingController();
 
+//!current password 
+ bool obscureCurrentPassword = true;
+  void obscureShowCurrentPassword() {
+    if (obscureCurrentPassword == true) {
+      obscureCurrentPassword = false;
+    } else {
+      obscureCurrentPassword = true;
+    }
+    emit(CurrentPasswordSuffixIcon());
+  }
+//!new password
+bool obscureNewPassword = true;
+  void obscureShowNewPassword() {
+    if (obscureNewPassword == true) {
+      obscureNewPassword = false;
+    } else {
+      obscureNewPassword = true;
+    }
+    emit(NewPasswordSuffixIcon());
+  }
+//!new password
+bool obscureConfrimNewPassword = true;
+  void obscureShowConfirmNewPassword() {
+    if (obscureConfrimNewPassword == true) {
+      obscureConfrimNewPassword = false;
+    } else {
+      obscureConfrimNewPassword = true;
+    }
+    emit(ConfirmNewPasswordSuffixIcon());
+  }
   //! Rating Alert
   TextEditingController rateCommentController = TextEditingController();
   //* Rating Stars
