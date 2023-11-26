@@ -15,7 +15,9 @@ class SettingScreen extends StatelessWidget {
   const SettingScreen({super.key});
 
   @override
+  
   Widget build(BuildContext context) {
+    final TextEditingController controllerrrr = TextEditingController();
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -40,6 +42,7 @@ class SettingScreen extends StatelessWidget {
               SizedBox(
                 height: 30.h,
               ),
+
               //text account setting
               Text(
                 AppStrings.accountSettings.tr(context),
@@ -97,8 +100,7 @@ class SettingScreen extends StatelessWidget {
               //! change password
               CustomListTileSetting(
                 onTap: () {
-                  showBottomSheet(
-                    
+                  showModalBottomSheet(
                     context: context,
                     shape: RoundedRectangleBorder(
                       side: const BorderSide(
@@ -115,33 +117,37 @@ class SettingScreen extends StatelessWidget {
                           padding: const EdgeInsets.symmetric(
                               horizontal: 22, vertical: 35),
                           child: SingleChildScrollView(
-                            child: Column(
-                              // mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  AppStrings.changePassword.tr(context),
-                                  style: CustomTextStyle.poppins600secondary32,
-                                ),
-                                SizedBox(
-                                  height: 48.h,
-                                ),
-                                SettingChangePasswordTextField(
-                                  labelText: AppStrings.enterCurrentPassword,
-                                  hintText: AppStrings.enterCurrentPassword,
-                                  controller: TextEditingController(),
-                                  prefixIcon: const Icon(Icons.lock),
-                                  suffixIcon: const Icon(Icons.remove_red_eye),
-                                  validator: (value) {
-                            if (value!.isEmpty) {
-                              return AppStrings.pleaseEnterValidName
-                                  .tr(context);
-                            }
-                            return null;
-                          },
-                                ),
-                                
-                              ],
+                            child: Form(
+                              child: Column(
+                                // mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    AppStrings.changePassword.tr(context),
+                                    style:
+                                        CustomTextStyle.poppins600secondary32,
+                                  ),
+                                  SizedBox(
+                                    height: 48.h,
+                                  ),
+
+                                  SettingChangePasswordTextField(
+                                    labelText: AppStrings.enterCurrentPassword,
+                                    hintText: AppStrings.enterCurrentPassword,
+                                    controller: controllerrrr,
+                                    prefixIcon: const Icon(Icons.lock),
+                                    suffixIcon:
+                                        const Icon(Icons.remove_red_eye),
+                                    validator: (value) {
+                                      if (value!.isEmpty) {
+                                        return AppStrings.pleaseEnterValidPassword
+                                            .tr(context);
+                                      }
+                                      return null;
+                                    },
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),
