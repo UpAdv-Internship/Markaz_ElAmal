@@ -5,6 +5,27 @@ import 'package:markaz_elamal/features/profile/presentation/cubits/settings_cubi
 class SettingsCubit extends Cubit<SettingsState> {
   SettingsCubit() : super(SettingsInitial());
 
+  //! Feed Back Alert
+  TextEditingController feedBackCommentController = TextEditingController();
+  bool bugCheckBox = true;
+  bool commentCheckBox = false;
+  bool otherCheckBox = false;
+  void changeCheckBox(String type) {
+    bugCheckBox = false;
+    commentCheckBox = false;
+    otherCheckBox = false;
+    if (type == "bug") {
+      bugCheckBox = true;
+    }
+    if (type == "comment") {
+      commentCheckBox = true;
+    }
+    if (type == "other") {
+      otherCheckBox = true;
+    }
+    emit(changeCheckBoxState());
+  }
+
   //! Rating Alert
   TextEditingController rateCommentController = TextEditingController();
   //* Rating Stars
