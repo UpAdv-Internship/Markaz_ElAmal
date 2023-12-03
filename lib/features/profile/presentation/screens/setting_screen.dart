@@ -16,9 +16,7 @@ class SettingScreen extends StatelessWidget {
   const SettingScreen({super.key});
 
   @override
-  
   Widget build(BuildContext context) {
-    
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -64,12 +62,10 @@ class SettingScreen extends StatelessWidget {
                   AppStrings.profileInformation.tr(context),
                 ),
                 subtitle: Text(AppStrings.nameEmailSecurity.tr(context)),
-                trailing: IconButton(
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.arrow_forward_ios_rounded,
-                      color: AppColors.secondary,
-                    )),
+                trailing: const Icon(
+                  Icons.arrow_forward_ios_rounded,
+                  color: AppColors.secondary,
+                ),
               ),
               SizedBox(
                 height: 30.h,
@@ -86,14 +82,13 @@ class SettingScreen extends StatelessWidget {
                   AppStrings.privacy.tr(context),
                 ),
                 subtitle: Text(AppStrings.controlYourPrivacy.tr(context)),
-                trailing: IconButton(
-                    onPressed: () {
-                      navigate(context: context, route: Routes.privacyScreen);
-                    },
-                    icon: const Icon(
-                      Icons.arrow_forward_ios_rounded,
-                      color: AppColors.secondary,
-                    )),
+                trailing: const Icon(
+                  Icons.arrow_forward_ios_rounded,
+                  color: AppColors.secondary,
+                ),
+                onTap: () {
+                  navigate(context: context, route: Routes.privacyScreen);
+                },
               ),
               SizedBox(
                 height: 30.h,
@@ -126,12 +121,11 @@ class SettingScreen extends StatelessWidget {
                 ),
                 subtitle:
                     Text(AppStrings.changeYourCurrentPassword.tr(context)),
-                trailing: IconButton(
-                    onPressed: () {},
-                    icon: const Icon(
+                trailing: const Icon(
+                    
                       Icons.arrow_forward_ios_rounded,
                       color: AppColors.secondary,
-                    )),
+                    ),
               ),
               SizedBox(
                 height: 55.h,
@@ -207,5 +201,3 @@ class SettingScreen extends StatelessWidget {
     );
   }
 }
-
-

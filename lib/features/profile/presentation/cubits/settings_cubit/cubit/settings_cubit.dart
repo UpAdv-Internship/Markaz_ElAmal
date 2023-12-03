@@ -63,4 +63,29 @@ bool obscureConfrimNewPassword = true;
   void clearControllers() {
     rateCommentController.clear();
   }
+
+  //! switch icon name privacy
+  bool switchOnName=false;
+  void switchName(value){
+    switchOnName=!switchOnName;
+    emit(SwitchNameChanged());
+  }
+  //! switch icon phone privacy
+  bool switchOnPhone=false;
+  void switchPhone(value){
+switchOnPhone=!switchOnPhone;
+    emit(SwitchPhoneChanged());
+  }
+  //! switch icon email privacy
+  bool switchOnEmail=false;
+  void switchEmail(value){
+switchOnEmail=!switchOnEmail;
+    emit(SwitchEmailChanged());
+  }
+  //! switch icon email privacy
+  bool switchOnRecomend=false;
+  void switchRecomend(value){
+switchOnRecomend=!switchOnRecomend;
+    emit(SwitchRecomendChanged());
+  }
 }
