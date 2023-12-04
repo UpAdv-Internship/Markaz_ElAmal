@@ -53,7 +53,9 @@ class AppBarHome extends StatelessWidget {
                 Icons.messenger_outline,
                 color: AppColors.white,
               ),
-              onTap: () {}),
+              onTap: () {
+                navigate(context: context, route: Routes.chatsScreen);
+              }),
         ],
       ),
     );
