@@ -9,7 +9,10 @@ class SignUpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       backgroundColor: AppColors.primary,
-      body: SignUpBody(),
+      body: SingleChildScrollView(
+        physics: ClampingScrollPhysics(),
+        child: SignUpBody(),
+      ),
     );
   }
 }

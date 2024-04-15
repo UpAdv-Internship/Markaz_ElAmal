@@ -6,12 +6,12 @@ import 'package:markaz_elamal/core/locale/app_locale.dart';
 import 'package:markaz_elamal/core/router/app_router.dart';
 import 'package:markaz_elamal/core/utils/app_strings.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:markaz_elamal/core/utils/app_text_styles.dart';
 import 'package:markaz_elamal/core/widgets/logo_with_text_widget.dart';
 import 'package:markaz_elamal/core/widgets/custom_form_text_filed.dart';
 import 'package:markaz_elamal/features/authentication/common/custom_authentication_btn.dart';
-import 'package:markaz_elamal/features/authentication/sign_in/presentation/cubit/sign_in_cubit.dart';
-import 'package:markaz_elamal/features/authentication/sign_in/presentation/cubit/sign_in_state.dart';
+import 'package:markaz_elamal/features/authentication/sign_in/presentation/sign_cubit/sign_in_cubit.dart';
+import 'package:markaz_elamal/features/authentication/sign_in/presentation/sign_cubit/sign_in_state.dart';
+import 'package:markaz_elamal/features/authentication/sign_in/presentation/widgets/forgot_password_bottom_sheet.dart';
 import 'package:markaz_elamal/features/authentication/sign_in/presentation/widgets/have_an_account_widget.dart';
 
 class SignInForm extends StatelessWidget {
@@ -40,9 +40,8 @@ class SignInForm extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 12.w),
                 child: Form(
                   key: context.read<SignInCubit>().signInFormController,
-                  child: Column(
+                  child: ListView(
                     children: [
-                      SizedBox(height: 5.h),
                       //!Logo
                       const LogoWithTextWidget(),
                       SizedBox(height: 20.h),
@@ -56,13 +55,14 @@ class SignInForm extends StatelessWidget {
                           }
                           return null;
                         },
-                        controller: TextEditingController(),
+                        controller: context
+                            .read<SignInCubit>()
+                            .emailTextEditingController,
                         labelText: AppStrings.email.tr(context),
                         prefixIcon: Icon(Icons.email_outlined, size: 30.w),
                       ),
                       SizedBox(height: 16.h),
                       //!Password
-
                       CustomFormTextFiled(
                         obscureText: context
                             .read<SignInCubit>()
@@ -100,37 +100,27 @@ class SignInForm extends StatelessWidget {
                       CustomAuthenticationBtn(
                           text: AppStrings.signin.tr(context),
                           onPressed: () {
-                            if (context
-                                .read<SignInCubit>()
-                                .signInFormController
-                                .currentState!
-                                .validate()) {
-                              navigate(
-                                  context: context,
-                                  route: Routes.doctorProfile);
-                            }
+                            navigate(
+                                context: context, route: Routes.botthomNavv);
                           }),
                       SizedBox(height: 16.h),
 
                       //!Forgot Password
-
-                      Text(
-                        AppStrings.forgetPassword.tr(context),
-                        style: CustomTextStyle.poppins600White16,
+                      const Align(
+                        child: ForgetPasswordBottomSheet(),
                       ),
                     ],
                   ),
                 ),
               ),
             ),
-            SizedBox(height: 150.h),
-
+            SizedBox(height: 120.h),
             //!Don't Have An Account ?
             HaveAnAccountTextWidget(
               textOne: AppStrings.dontHaveAnAccount.tr(context),
               textTwo: AppStrings.signup.tr(context),
               onTap: () {
-                navigateReplacment(context: context, route: Routes.signUp);
+                navigate(context: context, route: Routes.signUp);
               },
             ),
           ],

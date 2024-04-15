@@ -21,6 +21,7 @@ class PaymentOption extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColors.primary,
+        elevation: 0,
         leading: IconButton(
           onPressed: () {
             navigateReplacment(context: context, route: Routes.doctorProfile);

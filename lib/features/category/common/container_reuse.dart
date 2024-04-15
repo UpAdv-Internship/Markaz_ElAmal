@@ -3,15 +3,19 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:markaz_elamal/core/utils/app_colors.dart';
 import 'package:markaz_elamal/core/utils/app_text_styles.dart';
 
+import '../../../core/common/common.dart';
+import '../../../core/router/app_router.dart';
+
 class ContainerReuse extends StatelessWidget {
   const ContainerReuse(
       {Key? key,
       required this.imageOfDis,
       required this.desc,
       required this.distanceBetweenImageAndText,
-      required this.onTap})
+      //required this.onTap
+      })
       : super(key: key);
-  final void Function()? onTap;
+  //final void Function()? onTap;
   final Image? imageOfDis;
   final String desc;
   final double distanceBetweenImageAndText;
@@ -19,7 +23,9 @@ class ContainerReuse extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onTap,
+      onTap: (){
+        navigate(context: context, route: Routes.doctorsCategory);
+      },
       child: Container(
         height: 230.h,
         width: 185.w,

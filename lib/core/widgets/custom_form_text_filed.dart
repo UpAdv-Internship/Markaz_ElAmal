@@ -7,7 +7,7 @@ class CustomFormTextFiled extends StatelessWidget {
   const CustomFormTextFiled({
     super.key,
     required this.controller,
-    required this.labelText,
+    this.labelText,
     this.color,
     this.prefixIcon,
     this.prefixIconColor,
@@ -15,33 +15,41 @@ class CustomFormTextFiled extends StatelessWidget {
     this.suffixIcon,
     this.suffixIconColor,
     this.obscureText,
+    this.labelTextStyle,
+    this.hintText,
+    this.hintTextStyle,
+    this.keyboardType,
   });
   final TextEditingController controller;
   final Color? color;
-  final String labelText;
+  final String? labelText;
+  final String? hintText;
   final Icon? prefixIcon;
   final Widget? suffixIcon;
   final bool? obscureText;
   final Color? prefixIconColor;
   final Color? suffixIconColor;
-
+  final TextStyle? labelTextStyle;
+  final TextStyle? hintTextStyle;
   final String? Function(String?)? validator;
+  final TextInputType? keyboardType;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      style: CustomTextStyle.poppins400White16,
+      style: labelTextStyle ?? CustomTextStyle.poppins400White16,
       validator: validator,
       controller: controller,
+      keyboardType: keyboardType,
       obscureText: obscureText ?? false,
       decoration: InputDecoration(
         border: getBorderSide(color: color),
         enabledBorder: getBorderSide(color: color),
         errorBorder: getBorderSide(color: AppColors.red),
         focusedBorder: getBorderSide(color: color),
-        label: Text(
-          labelText,
-          style: CustomTextStyle.poppins400White16,
-        ),
+        labelText: labelText,
+        labelStyle: labelTextStyle ?? CustomTextStyle.poppins400White16,
+        hintText: hintText,
+        hintStyle: hintTextStyle ?? CustomTextStyle.poppins400White16,
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
         suffixIconColor: suffixIconColor ?? AppColors.white,

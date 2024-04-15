@@ -65,7 +65,7 @@ class AppStrings {
   static const String availableDoctor = "availableDoctor";
   //! Profile
   static const String history = "history";
-  static const String historyDetails = "historyDetails";
+  static const String historyDetails = "History Details";
   static const String profileDetailes = "profileDetailes";
   static const String settings = "settings";
   static const String help = "help";
@@ -83,8 +83,11 @@ class AppStrings {
   static const String rateAndReviewUs = "rateAndReviewUs";
   static const String sendFeedback = "sendFeedback";
   static const String shareYourThought = "shareYourThought";
+  static const String confirm= "confirm";
   //! Privacy
   static const String privacyPreferences = "privacyPreferences";
+  static const String privacyPreferencesSubTitle = "privacyPreferencesSubTitle";
+
   static const String hiThereWeDontWantToKeepAnyInfo =
       "hiThereWeDontWantToKeepAnyInfo";
   static const String recommendations = "recommendations";
@@ -145,6 +148,7 @@ class AppStrings {
   static const String add = "add";
   static const String back = "back";
   static const String edit = "edit";
+  static const String editProfile = "editProfile";
   static const String cancel = "cancel";
   static const String savePreferences = "savePreferences";
   static const String submit = "submit";
