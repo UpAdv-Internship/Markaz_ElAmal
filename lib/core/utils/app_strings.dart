@@ -100,9 +100,9 @@ class AppStrings {
   static const String doYouHaveaSuggestionOrFoundSomeBug =
       "doYouHaveaSuggestionOrFoundSomeBug";
   static const String describeYourIissueOrIdea = "describeYourIissueOrIdea";
-  static const String bug = "bug ";
-  static const String comment = "comment ";
-  static const String other = "other ";
+  static const String bug = "bug";
+  static const String comment = "comment";
+  static const String other = "other";
   //! Logout
   static const String seeYouSoon = "seeYouSoon";
   static const String youAreAboutToLogoutAreYouSure =

@@ -10,3 +10,5 @@ final class SwitchNameChanged extends SettingsState {}
 final class SwitchPhoneChanged extends SettingsState {}
 final class SwitchEmailChanged extends SettingsState {}
 final class SwitchRecomendChanged extends SettingsState {}
+
+final class ChangeCheckBoxState extends SettingsState {}
