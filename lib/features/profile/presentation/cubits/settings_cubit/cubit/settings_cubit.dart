@@ -26,6 +26,40 @@ class SettingsCubit extends Cubit<SettingsState> {
     emit(ChangeCheckBoxState());
   }
 
+TextEditingController currentPasswordController = TextEditingController();
+TextEditingController newPasswordController = TextEditingController();
+TextEditingController confitmNewPasswordController = TextEditingController();
+
+//!current password 
+ bool obscureCurrentPassword = true;
+  void obscureShowCurrentPassword() {
+    if (obscureCurrentPassword == true) {
+      obscureCurrentPassword = false;
+    } else {
+      obscureCurrentPassword = true;
+    }
+    emit(CurrentPasswordSuffixIcon());
+  }
+//!new password
+bool obscureNewPassword = true;
+  void obscureShowNewPassword() {
+    if (obscureNewPassword == true) {
+      obscureNewPassword = false;
+    } else {
+      obscureNewPassword = true;
+    }
+    emit(NewPasswordSuffixIcon());
+  }
+//!new password
+bool obscureConfrimNewPassword = true;
+  void obscureShowConfirmNewPassword() {
+    if (obscureConfrimNewPassword == true) {
+      obscureConfrimNewPassword = false;
+    } else {
+      obscureConfrimNewPassword = true;
+    }
+    emit(ConfirmNewPasswordSuffixIcon());
+  }
   //! Rating Alert
   TextEditingController rateCommentController = TextEditingController();
   //* Rating Stars
@@ -50,5 +84,30 @@ class SettingsCubit extends Cubit<SettingsState> {
 
   void clearControllers() {
     rateCommentController.clear();
+  }
+
+  //! switch icon name privacy
+  bool switchOnName=false;
+  void switchName(value){
+    switchOnName=!switchOnName;
+    emit(SwitchNameChanged());
+  }
+  //! switch icon phone privacy
+  bool switchOnPhone=false;
+  void switchPhone(value){
+switchOnPhone=!switchOnPhone;
+    emit(SwitchPhoneChanged());
+  }
+  //! switch icon email privacy
+  bool switchOnEmail=false;
+  void switchEmail(value){
+switchOnEmail=!switchOnEmail;
+    emit(SwitchEmailChanged());
+  }
+  //! switch icon email privacy
+  bool switchOnRecomend=false;
+  void switchRecomend(value){
+switchOnRecomend=!switchOnRecomend;
+    emit(SwitchRecomendChanged());
   }
 }

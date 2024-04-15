@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:markaz_elamal/core/locale/app_locale.dart';
@@ -14,14 +12,16 @@ class SettingChangePasswordTextField extends StatelessWidget {
     required this.hintText,
     required this.controller,
     required this.prefixIcon,
-     this.validator, required this.suffixIcon,
+    this.validator,
+    required this.suffixIcon, this.passwordIsVisabal,
   });
   final String labelText;
   final String hintText;
   final TextEditingController controller;
   final Icon prefixIcon;
-  final Icon suffixIcon;
-  
+  final Widget suffixIcon;
+  final bool? passwordIsVisabal;
+
   final String? Function(String?)? validator;
   @override
   Widget build(BuildContext context) {
@@ -36,17 +36,16 @@ class SettingChangePasswordTextField extends StatelessWidget {
           ),
         ),
         CustomFormTextFiled(
-          
+          obscureText: passwordIsVisabal,
           controller: controller,
           hintText: hintText.tr(context),
           hintTextStyle: CustomTextStyle.poppins400black16,
           labelTextStyle: CustomTextStyle.poppins400black16,
           color: AppColors.secondary,
-          prefixIcon:prefixIcon,
+          prefixIcon: prefixIcon,
           suffixIcon: suffixIcon,
           prefixIconColor: AppColors.secondary,
           suffixIconColor: AppColors.secondary,
-          
           validator: validator,
         ),
         SizedBox(height: 23.h),

@@ -83,8 +83,11 @@ class AppStrings {
   static const String rateAndReviewUs = "rateAndReviewUs";
   static const String sendFeedback = "sendFeedback";
   static const String shareYourThought = "shareYourThought";
+  static const String confirm= "confirm";
   //! Privacy
   static const String privacyPreferences = "privacyPreferences";
+  static const String privacyPreferencesSubTitle = "privacyPreferencesSubTitle";
+
   static const String hiThereWeDontWantToKeepAnyInfo =
       "hiThereWeDontWantToKeepAnyInfo";
   static const String recommendations = "recommendations";

@@ -9,9 +9,9 @@ import 'package:markaz_elamal/core/utils/app_strings.dart';
 import 'package:markaz_elamal/core/utils/app_text_styles.dart';
 import 'package:markaz_elamal/features/profile/components/feed_back_alert_dialog.dart';
 import 'package:markaz_elamal/features/profile/components/rating_alert_dialog.dart';
+import 'package:markaz_elamal/features/profile/widget/change_password_bottom_sheet.dart';
 import 'package:markaz_elamal/features/profile/widget/custom_circle_avatar_setting.dart';
 import 'package:markaz_elamal/features/profile/widget/custom_list_tile.dart';
-import 'package:markaz_elamal/features/profile/widget/setting_change_password_text_feild.dart';
 
 class SettingScreen extends StatelessWidget {
   const SettingScreen({super.key});
@@ -42,6 +42,7 @@ class SettingScreen extends StatelessWidget {
               SizedBox(
                 height: 30.h,
               ),
+
               //text account setting
               Text(
                 AppStrings.accountSettings.tr(context),
@@ -62,12 +63,10 @@ class SettingScreen extends StatelessWidget {
                   AppStrings.profileInformation.tr(context),
                 ),
                 subtitle: Text(AppStrings.nameEmailSecurity.tr(context)),
-                trailing: IconButton(
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.arrow_forward_ios_rounded,
-                      color: AppColors.secondary,
-                    )),
+                trailing: const Icon(
+                  Icons.arrow_forward_ios_rounded,
+                  color: AppColors.secondary,
+                ),
               ),
               SizedBox(
                 height: 30.h,
@@ -84,14 +83,13 @@ class SettingScreen extends StatelessWidget {
                   AppStrings.privacy.tr(context),
                 ),
                 subtitle: Text(AppStrings.controlYourPrivacy.tr(context)),
-                trailing: IconButton(
-                    onPressed: () {
-                      navigate(context: context, route: Routes.privacyScreen);
-                    },
-                    icon: const Icon(
-                      Icons.arrow_forward_ios_rounded,
-                      color: AppColors.secondary,
-                    )),
+                trailing: const Icon(
+                  Icons.arrow_forward_ios_rounded,
+                  color: AppColors.secondary,
+                ),
+                onTap: () {
+                  navigate(context: context, route: Routes.privacyScreen);
+                },
               ),
               SizedBox(
                 height: 30.h,
@@ -99,7 +97,7 @@ class SettingScreen extends StatelessWidget {
               //! change password
               CustomListTileSetting(
                 onTap: () {
-                  showBottomSheet(
+                  showModalBottomSheet(
                     context: context,
                     shape: RoundedRectangleBorder(
                       side: const BorderSide(
@@ -109,44 +107,7 @@ class SettingScreen extends StatelessWidget {
                           topRight: Radius.circular(30.r)),
                     ),
                     builder: (context) {
-                      return SizedBox(
-                        width: 428.w,
-                        height: 620.h,
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 22, vertical: 35),
-                          child: SingleChildScrollView(
-                            child: Column(
-                              // mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  AppStrings.changePassword.tr(context),
-                                  style: CustomTextStyle.poppins600secondary32,
-                                ),
-                                SizedBox(
-                                  height: 48.h,
-                                ),
-                                SettingChangePasswordTextField(
-                                  labelText: AppStrings.enterCurrentPassword,
-                                  hintText: AppStrings.enterCurrentPassword,
-                                  controller: TextEditingController(),
-                                  prefixIcon: const Icon(Icons.lock),
-                                  suffixIcon: const Icon(Icons.remove_red_eye),
-                                  validator: (value) {
-                            if (value!.isEmpty) {
-                              return AppStrings.pleaseEnterValidName
-                                  .tr(context);
-                            }
-                            return null;
-                          },
-                                ),
-
-                              ],
-                            ),
-                          ),
-                        ),
-                      );
+                      return const ChangePasswordBottomSheet();
                     },
                   );
                 },
@@ -161,12 +122,11 @@ class SettingScreen extends StatelessWidget {
                 ),
                 subtitle:
                     Text(AppStrings.changeYourCurrentPassword.tr(context)),
-                trailing: IconButton(
-                    onPressed: () {},
-                    icon: const Icon(
+                trailing: const Icon(
+                    
                       Icons.arrow_forward_ios_rounded,
                       color: AppColors.secondary,
-                    )),
+                    ),
               ),
               SizedBox(
                 height: 55.h,
