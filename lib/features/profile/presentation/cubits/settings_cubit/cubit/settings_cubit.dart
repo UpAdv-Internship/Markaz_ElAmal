@@ -23,7 +23,7 @@ class SettingsCubit extends Cubit<SettingsState> {
     if (type == "other") {
       otherCheckBox = true;
     }
-    emit(changeCheckBoxState());
+    emit(ChangeCheckBoxState());
   }
 
   //! Rating Alert
